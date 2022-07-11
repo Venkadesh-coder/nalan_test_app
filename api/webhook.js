@@ -4,7 +4,7 @@ const makeHandler = require('lambda-request-handler')
 
 const BASE_PATH =
   process.env.VERCEL_ENV === 'production'
-    ? 'https://nalan-theta.vercel.app'
+    ? 'https://nalan-test-app.vercel.app'
     : 'https://4636-157-49-251-183.in.ngrok.io';
 
 const token = process.env.TELEGRAM_TOKEN
