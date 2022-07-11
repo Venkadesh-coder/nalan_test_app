@@ -1,0 +1,1017 @@
+[
+  {
+    "name":"பெண் கல்வி  ஊக்குவிப்புத் தொகை",
+    "department":"மாவட்ட ஆதி திராவிடர் மற்றும் பழங்குடியினர் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST"
+    ],
+    "religion":[
+      "hindu"
+    ],
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":"3",
+    "maxEducation":"8",
+    "isStudent": true,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"3 முதல் 5 ஆம் வகுப்பு வரை",
+        "amount":500
+      },
+      {
+        "criteria":"6 ஆம் வகுப்பு மட்டும்",
+        "amount":1000
+      },
+      {
+        "criteria":"7 ஆம் வகுப்பு மற்றும் 8 ஆம் வகுப்பு",
+        "amount":1500
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"அரசு மற்றும் அரசு உதவி பெறும் பள்ளி மாணவிகள் மட்டும்"
+      },
+      {
+        "value":"இந்து ஆதி திராவிடர் மற்றும் பழங்குடியினர் மட்டும்"
+      }
+    ]
+  },
+  {
+    "name":"இலவச தையல் இயந்திரம்",
+    "department":"மாவட்ட ஆதி திராவிடர் மற்றும் பழங்குடியினர் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minAge":18,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":72000,
+    "benefits":[
+      {
+        "amount":"தையல் இயந்திரம்"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"6 மாத கால தையல் பயிற்சி பெற்றிருக்க வேண்டும்"
+      }
+    ]
+  },
+  {
+    "name":"இந்திரா காந்தி தேசிய விதவை உதவித் தொகை",
+    "department":"சமூக பாதுகாப்புத் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":null,
+    "religion":null,
+    "maritalStatus":[
+      "divorced"
+    ],
+    "isStudent": false,
+    "isFarmer": false,
+    "minAge":"40",
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":1000
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"மறுமணம் செய்திருக்கக் கூடாது"
+      },
+      {
+        "value":"வறுமைக் கோட்டிற்க்கு கீழ் உள்ளவராக இருத்தல் வேண்டும்"
+      }
+    ]
+  },
+  {
+    "name":"ஆதரவற்ற கணவரால் கைவிடப்பட்டவருக்கான உதவித் தொகை",
+    "department":"சமூக பாதுகாப்புத் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":null,
+    "religion":null,
+    "maritalStatus":[
+      "divorced",
+      "separated"
+    ],
+    "minAge":"30",
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":1000
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"5 வருடங்களுக்கு மேல் கணவனால் கைவிடப்பட்டவராக இருக்க வேண்டும்"
+      },
+      {
+        "value":"சட்டப்படி தனியாக வாழ்வதற்கான சான்றினை நீதிமன்றத்தின் முலம் பெற்றிருக்க வேண்டும்"
+      },
+      {
+        "value":"ஆதரவற்றவராக இருக்க வேண்டும்"
+      }
+    ]
+  },
+  {
+    "name":"50 வயது அல்லது அதற்கும் மேற்பட்ட திருமணம் செய்து கொள்ளாத ஏழைப் பெண்களுக்கான உதவித் தொகை",
+    "department":"சமூக பாதுகாப்புத் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":null,
+    "religion":null,
+    "maritalStatus":[
+      "single"
+    ],
+    "minAge":"50",
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":1000
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"ஆதரவற்றவராக இருக்க வேண்டும்"
+      }
+    ]
+  },
+  {
+    "name":"முஸ்லீம் மகளிர் உதவும் சங்கம்",
+    "department":"பிற்படுத்தப்பட்டோர் மற்றும் சிறுபான்மையினர் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":[
+      "divorced",
+      "separated",
+      "widowed"
+    ],
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"தையல் இயந்திரம்"
+      },
+      {
+        "amount":"மாவு அரைக்கும் இயந்திரம்"
+      },
+      {
+        "amount":"நிதி உதவி"
+      }
+    ]
+  },
+  {
+    "name":"கிறித்துவ மகளிர் உதவும் சங்கம்",
+    "department":"பிற்படுத்தப்பட்டோர் மற்றும் சிறுபான்மையினர் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":[
+      "divorced",
+      "separated",
+      "widowed"
+    ],
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"தையல் இயந்திரம்"
+      },
+      {
+        "amount":"மாவு அரைக்கும் இயந்திரம்"
+      },
+      {
+        "amount":"நிதி உதவி"
+      }
+    ]
+  },
+  {
+    "name":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலத்துறை - ஊக்கத்தொகை / பரிசுகள்",
+    "department":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":18,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": true,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"மாவட்ட அளவிலான பிளஸ்2 தேர்வு  பரிசு",
+        "amount":3000
+      },
+      {
+        "criteria":"மாவட்ட அளவிலான 10ஆம் வகுப்பு முதல் பரிசு",
+        "amount":1000
+      },
+      {
+        "criteria":"மாவட்ட அளவிலான 10ஆம் வகுப்பு இரண்டாம் பரிசு",
+        "amount":500
+      },
+      {
+        "criteria":"மாவட்ட அளவிலான 10ஆம் வகுப்பு மூன்றாம் பரிசு",
+        "amount":300
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"ஆதி திராவிடர் மாணவர்கள்"
+      }
+    ]
+  },
+  {
+    "name":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலத்துறை - உதவித்தொகை - 10 மற்றும் 12 ஆம் வகுப்புகளுக்கான பொதுத் தேர்வுக் கட்டணம்.",
+    "department":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":18,
+    "isStudent": true,
+    "isFarmer": false,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"10 மற்றும் 12 ஆம் வகுப்புகளுக்கான பொதுத் தேர்வுக் கட்டணம். இந்தத் தொகைகள் அரசால் நேரடியாக அரசுத் தேர்வுகள் இயக்குனரகத்திற்கு திருப்பிச் செலுத்தப்படும்."
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"ஆதி திராவிடர் மாணவர்கள்"
+      }
+    ]
+  },
+  {
+    "name":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலத்துறை - நிலையான - பாட புத்தகங்கள்",
+    "department":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": true,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"இலவச பாடப் புத்தகம்"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலப் பள்ளிகளில் ஒன்றாம் வகுப்பு முதல் 12ம் வகுப்பு வரை படிக்கும் அனைத்து மாணவர்கள்"
+      }
+    ]
+  },
+  {
+    "name":"மூன்று ஆண்டு டிப்ளமோ (பாலிடெக்னிக் படிப்புகள்) இலவச கல்வி உதவித்தொகை",
+    "department":"BC, MBC & சிறுபான்மையினர் நலத்துறை",
+    "gender":null,
+    "community":[
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": true,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":100000,
+    "benefits":[
+      {
+        "amount":"கல்விக் கட்டணம், சிறப்புக் கட்டணம் மற்றும் திரும்பப் பெறப்படாத கட்டாயக் கட்டணம் ஆகியவை அரசால் நிர்ணயம் செய்யப்பட்டபடியும், தேர்வுக் கட்டணமும் முழுமையாகச் செலுத்தப்படும்."
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"அரசு மற்றும் அரசு உதவி பெறும் பாலிடெக்னிக்கில் 3 ஆண்டு டிப்ளமோ படிப்புகளில் படிக்கும் பிற்படுத்தப்பட்ட, மிகவும் பிற்படுத்தப்பட்ட வகுப்பினர் மற்றும் நோட்டிஃபைட் செய்யப்பட்ட சமூக மாணவர்கள்."
+      },
+      {
+        "value":"குடும்பத்தில் டிப்ளமோ / பட்டதாரி இருக்கக் கூடாது."
+      }
+    ]
+  },
+  {
+    "name":"மாவட்ட மத்திய கூட்டுறவு வங்கிகள் மற்றும் அதன் கிளைகள் மூலம் - சுயஉதவி குழுக்கள் மூலம் மகப்பேறு கடனுக்கு",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":["married", "divorced", "separated", "widowed"],
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "benefits":[
+      {
+        "criteria":"சுயஉதவி குழுக்கள் மூலம் மகப்பேறு கடன் அதிகபட்ச கடன் தொகை",
+        "amount":20000
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"11%"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"கர்ப்பிணி பெண்கள்"
+      }
+    ]
+  },
+  {
+    "name":"சிறந்த எழுத்தாளர்களுக்கு ரூ.20,000/- விருது",
+    "department":"ஆதி திராவிடர் மற்றும் பழங்குடியினர் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"தேர்ந்தெடுக்கப்பட்ட சிறந்த எழுத்தாளர் விருது",
+        "amount":20000
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"ஆதி திராவிடர் / பழங்குடியினர் / ஆதி திராவிடர் ஆகியவற்றில் இருந்து கிறிஸ்துவ மதத்திற்கு மாறிய சிறந்த 10 எழுத்தாளர்கள் விருதுக்கு தேர்வு செய்யப்படுவார்கள்."
+      }
+    ]
+  },
+  {
+    "name":"கைமுறையாக இயக்கப்படும் தாவர பாதுகாப்பு உபகரணங்களின் விநியோகம்",
+    "department":"வேளாண்மை மற்றும் விவசாயிகள் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"உபகரணங்களின் விலையில் 50% மானியம் அல்லது ரூ. 800/- எது குறைவோ அது"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"விதைப்பண்ணைகளை பயறு வகை பயிர்களுடன் வளர்க்கும் அனைத்து விவசாயிகளும் நிதி இருப்புக்கு உட்பட்டு மானியம் பெற தகுதியுடையவர்கள். SC/ST 24%, பண்ணை பெண்கள் 20%"
+      }
+    ]
+  },
+  {
+    "name":"இறப்பு மற்றும் இறுதிச் செலவுகள்",
+    "department":"சுற்றுலா, கலாச்சாரம் மற்றும் சமய அறநிலையத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "benefits":[
+      {
+        "amount":"பதிவு செய்யப்பட்ட நாட்டுப்புறக் கலைஞர் இயற்கை மரணம் அடைந்தால், இறந்தவரின் நாமினிக்கு 15000 ரூபாய் வழங்கப்படும். 2000 இறுதிச் செலவுக்கு வழங்கப்படும்."
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"பதிவு செய்யப்பட்ட நாட்டுப்புறக் கலைஞர்"
+      }
+    ]
+  },
+  {
+    "name":"மாவட்ட மத்திய கூட்டுறவு வங்கிகள் மற்றும் அதன் கிளைகள் மூலம் - பணிபுரியும் பெண்களுக்கு",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "benefits":[
+      {
+        "criteria":"பணிபுரியும் பெண்கள் அதிகபட்ச கடன் தொகை",
+        "amount":20000
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"12%"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"பணிபுரியும் பெண்கள்"
+      }
+    ]
+  },
+  {
+    "name":"மாவட்ட மத்திய கூட்டுறவு வங்கிகள் மற்றும் அதன் கிளைகள் மூலம் - பெண் தொழில்முனைவோருக்கு",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "benefits":[
+      {
+        "criteria":"பெண் தொழில்முனைவோர் அதிகபட்ச கடன் தொகை",
+        "amount":500000
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"12%"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"பெண் தொழில்முனைவோர்"
+      }
+    ]
+  },
+  {
+    "name":"மாவட்ட மத்திய கூட்டுறவு வங்கிகள் மற்றும் அதன் கிளைகள் மூலம் - நுகர்வோர் டி.வி., குளிர்சாதன பெட்டி மற்றும் இரு சக்கர வாகனங்களுக்கு கடன்.",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "benefits":[
+      {
+        "criteria":"நுகர்வோர் டி.வி., குளிர்சாதன பெட்டி மற்றும் இரு சக்கர வாகனங்கள் கடன்.",
+        "amount":"கடனின் அதிகபட்ச தொகை செலவில் 75%"
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"14%"
+      }
+    ]
+  },
+  {
+    "name":"மாவட்ட மத்திய கூட்டுறவு வங்கிகள் மற்றும் அதன் கிளைகள் மூலம் - பூ, காய்கறிகள், பழங்கள் போன்றவற்றின் பெண் விற்பனையாளர்களுக்கு புதுப்பிக்கப்பட்ட சிறு கடன் கடனுக்காக",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":[
+      "female"
+    ],
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "benefits":[
+      {
+        "criteria":"எந்த நோக்கத்திற்காக கடன் பெறலாம் : பூ, காய்கறி, பழம் போன்ற பெண் விற்பனையாளர்களுக்கு புதுப்பிக்கப்பட்ட சிறு கடன் கடன், அதிகபட்ச கடன் தொகை",
+        "amount":5000
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"11%"
+      }
+    ]
+  },
+  {
+    "name":"மாவட்ட மத்திய கூட்டுறவு வங்கிகள் மற்றும் அதன் கிளைகள் மூலம் - டாக்டர்கள், பொறியாளர்கள் மற்றும் சுயதொழில் செய்பவர்களுக்கு தொழில்சார் கடன்.",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "benefits":[
+      {
+        "criteria":"மருத்துவர்கள், பொறியாளர்கள் மற்றும் சுயதொழில் செய்பவர்களுக்கு தொழில்சார் கடன். அதிகபட்ச கடன் தொகை",
+        "amount":1000000
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"13%"
+      }
+    ]
+  },
+  {
+    "name":"விவசாயிகள் நலன் குழு (FIG)",
+    "department":"வேளாண்மை மற்றும் விவசாயிகள் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"ஒரு குழுவிற்கு 15 விவசாயிகள்) விவசாய பயிர்களுக்கு. அலுவலக உபகரணங்களை வாங்குதல், தொழில்நுட்ப புல்லட்டின் வாங்குதல் மற்றும் நூலகத்தை அமைப்பதற்கு ஒரு குழுவிற்கு ரூ.5000 உதவி"
+      },
+      {
+        "amount":"விவசாயி உறுப்பினர்களால் பயிற்சி மற்றும் திறன்களை பெறுதல் ஒரு குழுவிற்கு ரூ.4000"
+      },
+      {
+        "amount":"அடையாள அட்டைகள் ரூ.400/ வழங்குதல்"
+      },
+      {
+        "amount":"ஒரு குழுவிற்கு மற்றும் மாவட்ட அளவிலான கூட்டத்திற்கு ஒரு கூட்டத்திற்கு ரூ.20,000"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"விவசாயிகள்"
+      }
+    ]
+  },
+  {
+    "name":"சான்றளிக்கப்பட்ட விதைகள் விநியோகம் - எண்ணெய் விதைகள்",
+    "department":"வேளாண்மை மற்றும் விவசாயிகள் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"விதை விலையில் 50% அல்லது ரூ. 1200/-பெர்குவின்டால் எது குறைவோ அது"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"அறக்கட்டளை மற்றும் சான்றளிக்கப்பட்ட வகை விதைகளை உற்பத்தி செய்து துறைக்கு வழங்கும் விவசாயிகள் பயன் பெற தகுதியுடையவர்கள்."
+      }
+    ]
+  },
+  {
+    "name":"மூலத்திலிருந்து வயலுக்கு தண்ணீரைக் கொண்டு செல்லும் குழாய்கள்",
+    "department":"வேளாண்மை மற்றும் விவசாயிகள் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"50% விலையில் மானியம் அல்லது ரூ.15000 800 மீட்டர் வரை நீர் கொண்டு செல்லும் குழாய்கள் மற்றும் அனைத்து வகையான குழாய்கள் (PVC HDPE போன்றவை) மற்றும் விவசாயியின் தேவைக்கேற்ப அனைத்து அளவு."
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"விவசாயிகள்"
+      }
+    ]
+  },
+  {
+    "name":"தொடக்கக் கூட்டுறவு வேளாண்மை மற்றும் ஊரக வளர்ச்சி வங்கி - கோழி வளர்ச்சிக்காக",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"கோழி வளர்ப்பு அதிகபட்ச கடன் தொகை",
+        "amount":14800
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"14.5% முதல் 16.5%"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"விவசாயிகள்"
+      }
+    ]
+  },
+  {
+    "name":"தொடக்க கூட்டுறவு வேளாண்மை மற்றும் ஊரக வளர்ச்சி வங்கி - பாசனப் பகுதியில் பட்டு வளர்ப்பு.",
+    "department":"கூட்டுறவு, உணவு மற்றும் நுகர்வோர் பாதுகாப்புத் துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "minIncome":null,
+    "maxIncome":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "benefits":[
+      {
+        "criteria":"பாசனப் பகுதியில் பட்டுப்புழு வளர்ப்பு. அதிகபட்ச கடன் தொகை",
+        "amount":"ஏக்கருக்கு ரூ.49,000 முதல் 79,000 வரை"
+      },
+      {
+        "criteria":"வட்டி விகிதம் (மாற்றத்திற்கு உட்பட்டது)",
+        "amount":"11% முதல் 12.75%"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"விவசாயிகள்"
+      }
+    ]
+  },
+  {
+    "name":"சொத்து குறைந்த நபர்களுக்கான வாழ்வாதார நடவடிக்கைகள்-2012",
+    "department":"வேளாண்மை மற்றும் விவசாயிகள் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"சுய உதவிக் குழுக்கள் குடும்ப நலனுக்காக சுழல் நிதியிலிருந்து கடன் பெற தகுதியுடையவர்கள்.",
+        "amount":"வருமானம் ஈட்டும் நடவடிக்கைகளுக்கு கடன் உதவி மற்றும் சுயஉதவி குழுக்களுக்கு சுழலும் நிதி மானியம்-600/எக்டர்"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"விவசாயிகள்"
+      }
+    ]
+  },
+  {
+    "name":"மினிகிட்கள் இலவசமாக விநியோகம்",
+    "department":"வேளாண்மை மற்றும் விவசாயிகள் நலத்துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": true,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"கோயம்புத்தூர், திண்டுக்கல், ஈரோடு, தருமபுரி, கிருஷ்ணகிரி, நாமக்கல், பெரம்பலூர், விருதுநகர், தேனி, விழுப்புரம், வேலூர், சேலம், புதுக்கோட்டை, மதுரை, சிவகங்கை, திருச்சி ஆகிய மாவட்டங்களில் உள்ள அனைத்து மக்காச்சோள விவசாயிகளும் இத்திட்டத்தின் கீழ் மானியம் பெறத் தகுதியுடையவர்கள். திருநெல்வேலி மற்றும் தூத்துக்குடி. சிறு/குறு விவசாயிகளுக்கு முன்னுரிமை அளிக்கப்படும் 24% SC/ST விவசாயிகளுக்கு 20% பெண் விவசாயிகள்/மகளிர் குழுக்களுக்கு ஓட்டம் உறுதி செய்யப்படும்.",
+        "amount":"100%"
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"விவசாயிகள்"
+      }
+    ]
+  },
+  {
+    "name":"கைத்தறி மற்றும் ஜவுளித் துறை - ஒருங்கிணைந்த ஜவுளிப் பூங்காக்கள் (SITP) திட்டத்தின் கீழ் ஒருங்கிணைந்த ஜவுளிப் பூங்காக்கள் அமைப்பதற்கான திட்டம்",
+    "department":"கைத்தறி, கைவினைப் பொருட்கள், ஜவுளி மற்றும் காதி துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "amount":"ஒருங்கிணைந்த ஜவுளிப் பூங்காக்களை அமைப்பதற்கான திட்டத்தின் கீழ், ஜவுளித் திட்டங்களுக்கான உச்சவரம்பு ரூ.40 கோடிக்கு உட்பட்டு, திட்ட மதிப்பீட்டில் 40% வரையிலான மானியம் அல்லது சமபங்கு இந்திய அரசு வழங்குகிறது. எவ்வாறாயினும், இந்திய அரசு / மாநில அரசு / மாநில தொழில்துறை மேம்பாட்டுக் கழகத்தின் ஒருங்கிணைந்த பங்கு பங்கு, ஏதேனும் இருந்தால், 49% ஐ விட அதிகமாக இருக்கக்கூடாது."
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"கைத்தறி நெசவாளர்கள்"
+      }
+    ]
+  },
+  {
+    "name":"பத்திரிகையாளர்களின் குடும்ப நல நிதி",
+    "department":"தமிழ் வளர்ச்சி மற்றும் தகவல் துறை",
+    "gender":null,
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":null,
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"பத்திரிகையாளர், துணை ஆசிரியர், நிருபர், புகைப்படக்கலைஞர், ப்ரூஃப் ரீடர் என 20 ஆண்டுகள் பணிபுரிந்து, பணியில் இருக்கும் போது மறைந்த பத்திரிகையாளர்களின் குடும்பங்களுக்கு, முதலமைச்சரின் பொது நிவாரண நிதியில் இருந்து, பத்திரிகையாளர் குடும்ப நல நிதி வழங்கப்படுகிறது.",
+        "amount":"ரூ. 50,000 முதல் ரூ. 2 லட்சம்."
+      }
+    ],
+    "eligibility":[
+      {
+        "value":"பத்திரிகையாளர்கள்"
+      }
+    ]
+  },
+  {
+    "name":"பத்திரிகையாளர் குடும்ப ஓய்வூதியம்",
+    "department":"தமிழ் வளர்ச்சி மற்றும் தகவல் துறை",
+    "gender":["female"],
+    "community":[
+      "SC",
+      "ST",
+      "BC",
+      "MBC"
+    ],
+    "religion":null,
+    "maritalStatus":[
+      "widowed"
+    ],
+    "minAge":null,
+    "maxAge":null,
+    "minEducation":null,
+    "maxEducation":null,
+    "isStudent": false,
+    "isFarmer": false,
+    "minIncome":null,
+    "maxIncome":null,
+    "benefits":[
+      {
+        "criteria":"இறந்த ஊடகவியலாளர் ஓய்வூதியதாரரின் மனைவிக்கு வழங்கப்படும் மாதாந்திர ஓய்வூதியம்",
+        "amount":2000
+      }
+    ]
+  }
+]
