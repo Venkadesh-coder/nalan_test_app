@@ -14,7 +14,47 @@ if (token === undefined) {
 
 const bot = new Telegraf(token, {
   telegram: { webhookReply: true }
-})
+});
+
+
+const startFn = (ctx) => {
+  console.log(ctx.from);
+  ctx.replyWithHTML(`வணக்கம் ${ctx.from.first_name}! நலன் இயலிக்கு உங்களை வரவேற்கிறோம். மக்களுக்காக அரசு இயற்றும் திட்டங்களை எளிய முறையில் மக்களுக்கு கொண்டு செல்வதே இந்த இயலியின் நோக்கம். சில எளிய கேள்விகளுக்குப் பதிலளிப்பதன் மூலம் அரசு உங்களுக்கு எவ்வாறு உதவும் எனத் தெரிந்து கொள்ளலாம்.\n\n [1/5] பயனாளியின் வகையைத் தேர்வு செய்யவும்`, {
+    reply_markup: {
+      inline_keyboard: [
+        [{
+          text: "மாணவர்",
+          callback_data: 'student'
+        }], [{
+          text: "விவசாயி",
+          callback_data: 'farmer'
+        }], [{
+          text: "மாற்றுத்திறனாளி",
+          callback_data: 'differently_abled'
+        }],
+        [{
+          text: "தொழில் முனைவோர்",
+          callback_data: 'entrepreneur'
+        }],
+        [{
+          text: "மகளிர்",
+          callback_data: 'women'
+        }],
+        [{
+          text: "முதியோர்",
+          callback_data: 'senior_citizen'
+        }],
+        [{
+          text: "மேற்கண்ட எதுவும் இல்லை",
+          callback_data: 'none_of_the_above'
+        }],
+      ]
+    }
+  });
+};
+
+bot.telegram.setWebhook(`${BASE_PATH}/api/webhook`);
+bot.start(startFn);
 
 // const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
@@ -40,42 +80,6 @@ module.exports = async (req, res) => {
       male: "சகோதரா",
       female: "சகோதரி",
       transgender: "சகோ"
-    };
-
-    const startFn = (ctx) => {
-      console.log(ctx.from);
-      ctx.replyWithHTML(`வணக்கம் ${ctx.from.first_name}! நலன் இயலிக்கு உங்களை வரவேற்கிறோம். மக்களுக்காக அரசு இயற்றும் திட்டங்களை எளிய முறையில் மக்களுக்கு கொண்டு செல்வதே இந்த இயலியின் நோக்கம். சில எளிய கேள்விகளுக்குப் பதிலளிப்பதன் மூலம் அரசு உங்களுக்கு எவ்வாறு உதவும் எனத் தெரிந்து கொள்ளலாம்.\n\n [1/5] பயனாளியின் வகையைத் தேர்வு செய்யவும்`, {
-        reply_markup: {
-          inline_keyboard: [
-            [{
-              text: "மாணவர்",
-              callback_data: 'student'
-            }], [{
-              text: "விவசாயி",
-              callback_data: 'farmer'
-            }], [{
-              text: "மாற்றுத்திறனாளி",
-              callback_data: 'differently_abled'
-            }],
-            [{
-              text: "தொழில் முனைவோர்",
-              callback_data: 'entrepreneur'
-            }],
-            [{
-              text: "மகளிர்",
-              callback_data: 'women'
-            }],
-            [{
-              text: "முதியோர்",
-              callback_data: 'senior_citizen'
-            }],
-            [{
-              text: "மேற்கண்ட எதுவும் இல்லை",
-              callback_data: 'none_of_the_above'
-            }],
-          ]
-        }
-      });
     };
 
     const catogeryFn = (ctx) => {
@@ -511,10 +515,6 @@ module.exports = async (req, res) => {
     ["12000", "24000", "36000", "48000", "60000", "72000", "84000", "96000", "100000"].forEach((inc) => {
       bot.action(inc, incomeFn);
     });
-
-
-    bot.telegram.setWebhook(`${BASE_PATH}/api/webhook`);
-    bot.start(startFn);
 
     await bot.handleUpdate(req.body);
   } catch (error) {
