@@ -487,6 +487,7 @@ bot.action('transgender', genderFn);
 bot.action('farmer', farmerFn);
 
 bot.action('seeds', farmerNeedOptions);
+bot.action('fertilizer', farmerNeedOptions);
 //TODO: Add remaining options
 
 bot.action('OC', communityFn);
