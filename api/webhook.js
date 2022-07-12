@@ -59,7 +59,7 @@ bot.start(startFn);
 // const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 module.exports = async (req, res) => {
-  try {
+  try{ 
     console.log('request received', req.body);
     let gender;
     let catogery;
@@ -107,7 +107,7 @@ module.exports = async (req, res) => {
     const genderFn = (ctx) => {
       gender = ctx.update.callback_query.data;
       let greet = greetingGender[gender] || ''
-      bot.telegram.sendMessage(ctx.chat.id, `[2/5] நன்றி ${greet}! பயனாளி எந்த சமூகத்தைச் சேர்ந்தவர்? பின்வரும் ஒன்றைத் தேர்ந்தெடுக்கவும்.`, {
+      bot.telegram.sendMessage(ctx.chat.id, `[3/5] நன்றி ${greet}! பயனாளி எந்த சமூகத்தைச் சேர்ந்தவர்? பின்வரும் ஒன்றைத் தேர்ந்தெடுக்கவும்.`, {
         reply_markup: {
           inline_keyboard: [
             [{
@@ -136,7 +136,7 @@ module.exports = async (req, res) => {
 
     const communityFn = (ctx) => {
       community = ctx.update.callback_query.data;
-      bot.telegram.sendMessage(ctx.chat.id, '[3/5] பின்வருவனற்றுள் எது பயனாளியைக் குறிக்கும்?', {
+      bot.telegram.sendMessage(ctx.chat.id, '[4/5] பின்வருவனற்றுள் எது பயனாளியைக் குறிக்கும்?', {
         reply_markup: {
           inline_keyboard: [
             [{
