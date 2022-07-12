@@ -249,7 +249,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -333,7 +334,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -585,7 +587,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -669,7 +672,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -921,7 +925,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -1061,7 +1066,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -1089,7 +1095,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -1285,7 +1292,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -1425,7 +1433,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -1453,7 +1462,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": "http:\/\/www.minorityaffairs.gov.in\/SCHEMES\/PERFORMANCE\/Scholarship-Schemes\/pre-matric-scholarship-scheme",
@@ -1565,7 +1575,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": ["christian"]
+   "religion": ["christian"],
+   "isWomen":true
   },
   {
    "url": null,
@@ -1593,7 +1604,9 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": ["christian"]
+   "religion": ["christian"],
+   "isWomen":true,
+   "isMiscarriage":true
   },
   {
    "url": null,
@@ -1845,7 +1858,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isWomen":true
   },
   {
    "url": null,
@@ -2041,7 +2055,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": [{"value": "Members in Ulemas and Employees Welfare Board"}],
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isWomen":true
   },
   {
    "url": null,
@@ -2097,7 +2112,8 @@
    "covidStatus": "No",
    "health": null,
    "eligibility": [{"value": "Members in Ulemas and Employees Welfare Board"}],
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isWomen":true
   },
   {
    "url": null,
@@ -2125,7 +2141,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": [{"value": "Members in Ulemas and Employees Welfare Board"}],
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isWomen":true
   },
   {
    "url": null,
@@ -2463,7 +2480,9 @@
    "covidStatus": "No",
    "health": null,
    "eligibility": [{"value": "Members in Ulemas and Employees Welfare Board"}],
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isWomen":true,
+   "isMarriageAssist":true
   },
   {
    "url": null,
@@ -2491,7 +2510,9 @@
    "covidStatus": null,
    "health": null,
    "eligibility": [{"value": "Members in Ulemas and Employees Welfare Board"}],
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isMaternity":true,
+   "isWomen":true
   },
   {
    "url": null,
@@ -2519,7 +2540,9 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isWomen":true,
+   "isMiscarriage":true
   },
   {
    "url": null,
@@ -2687,7 +2710,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": ["muslim"]
+   "religion": ["muslim"],
+   "isWomen":true
   },
   {
    "url": null,
@@ -2883,7 +2907,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -2939,7 +2964,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -2967,7 +2993,8 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true
   },
   {
    "url": null,
@@ -3333,7 +3360,9 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true,
+   "isMarriageAssist":true
   },
   {
    "url": null,
@@ -3361,7 +3390,9 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true,
+   "isMaternity":true
   },
   {
    "url": null,
@@ -3389,7 +3420,9 @@
    "covidStatus": null,
    "health": null,
    "eligibility": null,
-   "religion": null
+   "religion": null,
+   "isWomen":true,
+   "isMiscarriage":true
   },
   {
    "url": null,

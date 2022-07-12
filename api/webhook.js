@@ -487,7 +487,6 @@ module.exports = async (req, res) => {
     bot.on('text', startFn);
     bot.on('message', startFn);
     bot.action('start', startFn);
-
     bot.action('male', genderFn);
     bot.action('female', genderFn);
     bot.action('transgender', genderFn);
@@ -497,6 +496,8 @@ module.exports = async (req, res) => {
     bot.action('seeds', farmerNeedOptions);
     bot.action('fertilizer', farmerNeedOptions);
     //TODO: Add remaining options
+
+    bot.action('student', catogeryFn);
 
     bot.action('OC', communityFn);
     bot.action('BC', communityFn);
