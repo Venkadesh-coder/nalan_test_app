@@ -150,7 +150,7 @@ module.exports = async (req, res) => {
         }
       });
     };
-
+// age not working in bot
     const studentFn = async (ctx) => {
       isSchoolStudent = ctx.update.callback_query.data === 'schoolStudent';
       isCollegeStudent = ctx.update.callback_query.data === 'collegeStudent';
@@ -190,6 +190,44 @@ module.exports = async (req, res) => {
       } else {
         await sendFinalResultFn(ctx);
       }
+    };
+
+    const ageFn = (ctx) => {
+      age = ctx.update.callback_query.data;
+      bot.telegram.sendMessage(ctx.chat.id, '[5/5] உங்கள் குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம் என்ன என்ன?', {
+        reply_markup: {
+          inline_keyboard: [
+            [{
+              text: "12,000 க்கு கீழ்",
+              callback_data: "12000"
+            }], [{
+              text: "12,001 - 24,000",
+              callback_data: "24000"
+            }], [{
+              text: "24,001 - 36,000",
+              callback_data: "36000"
+            }], [{
+              text: "36,001 - 48,000",
+              callback_data: "48000"
+            }], [{
+              text: "48,001 - 60,000",
+              callback_data: "60000"
+            }], [{
+              text: "60,001 - 72,000",
+              callback_data: "72000"
+            }], [{
+              text: "72,001 - 84,000",
+              callback_data: "84000"
+            }], [{
+              text: "84,001 - 96,000",
+              callback_data: "96000"
+            }], [{
+              text: "96,001 க்கு மேல்",
+              callback_data: "100000"
+            }]
+          ]
+        }
+      });
     };
 
     const farmerFn = async (ctx) => {
@@ -313,43 +351,7 @@ module.exports = async (req, res) => {
       }
     }
 
-    const ageFn = (ctx) => {
-      age = ctx.update.callback_query.data;
-      bot.telegram.sendMessage(ctx.chat.id, '[5/5] உங்கள் குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம் என்ன என்ன?', {
-        reply_markup: {
-          inline_keyboard: [
-            [{
-              text: "12,000 க்கு கீழ்",
-              callback_data: "12000"
-            }], [{
-              text: "12,001 - 24,000",
-              callback_data: "24000"
-            }], [{
-              text: "24,001 - 36,000",
-              callback_data: "36000"
-            }], [{
-              text: "36,001 - 48,000",
-              callback_data: "48000"
-            }], [{
-              text: "48,001 - 60,000",
-              callback_data: "60000"
-            }], [{
-              text: "60,001 - 72,000",
-              callback_data: "72000"
-            }], [{
-              text: "72,001 - 84,000",
-              callback_data: "84000"
-            }], [{
-              text: "84,001 - 96,000",
-              callback_data: "96000"
-            }], [{
-              text: "96,001 க்கு மேல்",
-              callback_data: "100000"
-            }]
-          ]
-        }
-      });
-    };
+    
 
     const incomeFn = async (ctx) => {
       income = ctx.update.callback_query.data;
@@ -487,6 +489,7 @@ module.exports = async (req, res) => {
     bot.on('text', startFn);
     bot.on('message', startFn);
     bot.action('start', startFn);
+
     bot.action('male', genderFn);
     bot.action('female', genderFn);
     bot.action('transgender', genderFn);
@@ -494,8 +497,10 @@ module.exports = async (req, res) => {
     bot.action('farmer', farmerFn);
 
     bot.action('seeds', farmerNeedOptions);
+    bot.action('tools', farmerNeedOptions);
     bot.action('fertilizer', farmerNeedOptions);
-    //TODO: Add remaining options
+    bot.action('cattle', farmerNeedOptions);
+    bot.action('small_grain', farmerNeedOptions);
 
     bot.action('student', catogeryFn);
 
