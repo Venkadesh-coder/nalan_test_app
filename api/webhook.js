@@ -301,6 +301,88 @@ module.exports = async (req, res) => {
           return false;
         }
       });
+      if (schemes.length) {
+        const messagesArray = [];
+        let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+        firstMessage += '===============================\n\n';
+        messagesArray.push(firstMessage);
+        let message = '';
+        schemes.forEach((scheme, index) => {
+          let benefits = '';
+          let education = '';
+          let description = '';
+          let url = '';
+          let religion = '';
+          let maxIncome = '';
+          scheme.benefits?.forEach((benefit) => {
+            benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+          });
+
+          let eligibility = '';
+          if (scheme.eligibility) {
+            eligibility = '<b>இதர தகுதி</b>:\n';
+            scheme.eligibility?.forEach((elig) => {
+              eligibility += `<b>*</b> ${elig.value}\n`;
+            });
+          }
+
+          if (scheme.education) {
+            education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+          }
+
+          if (scheme.religion && scheme.religion.length) {
+            religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+          }
+
+          if (scheme.description) {
+            description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+          }
+
+          if (scheme.maxIncome) {
+            maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+          }
+
+          if (scheme.url) {
+            url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+          }
+          let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+          currentMessage += '===============================\n\n';
+
+          if ((message+currentMessage).length >= 4096) {
+            messagesArray.push(message);
+            message = currentMessage;
+          } else {
+            message += currentMessage;
+          }
+        });
+
+        messagesArray.push(message);
+
+        for (let mess of messagesArray) {
+          await ctx.replyWithHTML(mess);
+        }
+        await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+          reply_markup: {
+            inline_keyboard: [
+              [{
+                text: "மீண்டும் தொடங்கு",
+                callback_data: 'start'
+              }
+            ]]
+          }
+        });
+      } else {
+        await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+          reply_markup: {
+            inline_keyboard: [
+              [{
+                text: "மீண்டும் தொடங்கு",
+                callback_data: 'start'
+              }
+            ]]
+          }
+        });
+      }
     }
 
 // women category information    
@@ -356,7 +438,7 @@ const womenFn = async (ctx) => {
 // women filter
 
 const womenOptionsFn = async (ctx) => {
-  let womenType =  ctx.update.callback_query.data;
+  let womenType = ctx.update.callback_query.data;
   const schemes = data.filter((item) => {
     if (item.isWomen === true && item.womenType.includes(womenType)) {
       return true;
