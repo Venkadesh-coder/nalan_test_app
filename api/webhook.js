@@ -249,7 +249,6 @@ module.exports = async (req, res) => {
 
     const farmerFn = async (ctx) => {
       isFarmer = true;
-
       bot.telegram.sendMessage(ctx.chat.id, '[2/2] பயனாளியின் தேவை என்ன?', {
         reply_markup: {
           inline_keyboard: [
@@ -376,7 +375,7 @@ module.exports = async (req, res) => {
         reply_markup: {
           inline_keyboard: [
             [{
-              text: "கை கால் இயக்க குறைபாடு ",
+              text: "கை கால் இயக்க குறைபாடு",
               callback_data: "Locomotor_Disability"
             }], [{
               text: "பார்வை திறன் குறைபாடு",
@@ -385,10 +384,10 @@ module.exports = async (req, res) => {
               text: "செவிதிறன் குறைபாடு",
               callback_data: "Hearing_Impaired"
             }], [{
-              text: "மனவளர்ச்சி குன்றியோர் ",
+              text: "மனவளர்ச்சி குன்றியோர்",
               callback_data: "Intellectual_Disability"
             }],  [{
-              text: "புற உலக சிந்தனையாள்ர்",
+              text: "புற உலக சிந்தனையாளர்",
               callback_data: "Autism_Spectrum_Disorder"
             }],
             [{
@@ -417,9 +416,9 @@ module.exports = async (req, res) => {
     };
 
     const disabilitytypeFn = async (ctx) => {
-      typeOfDisability =  ctx.update.callback_query.data;
+      categoryOfDisability =  ctx.update.callback_query.data;
       const schemes = data.filter((item) => {
-        if (item.isDifferntlyAbled === true && item.typeOfDisability.includes(typeOfDisability)) {
+        if (item.isDifferntlyAbled === true && item.categoryOfDisability.includes(categoryOfDisability)) {
           return true;
         } else {
           return false;

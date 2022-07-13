@@ -6912,7 +6912,7 @@
    "religion":null,
    "requiredDocuments":"Passport size photo, Aadhar card, ration card photocopy of medical certificate from specialised doctors, community certificate, signature/thumb impression",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["21_Type_of_Disability", "none_of_the_list" ,"more_than_one" ]
+   "categoryOfDisability":["21_Type_of_Disability", "none_of_the_list" ,"more_than_one" ]
   },
   {
    "url": null,
@@ -6942,7 +6942,7 @@
    "religion":null,
    "requiredDocuments":"Passport size photo-4 nos , Aadhar card, Ration card photocopy, Medical certificate from Specialised Doctor confirms disability",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["21_Type_of_Disability", "none_of_the_list", "more_than_one" ]
+   "categoryOfDisability":["21_Type_of_Disability", "none_of_the_list", "more_than_one" ]
   },
   {
    "url": null,
@@ -6972,7 +6972,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card and Disability Certificate given by the concern Govt. Doctors , Passport size photo, Aadhar card photocopy, certificate from village administrative officer stating that the person has not received benefits from other departments, Savings Banked Account, Ration card photocopy.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Intellectual_Disability" ]
+   "categoryOfDisability":["Intellectual_Disability" ]
   },
   {
    "url": null,
@@ -7002,7 +7002,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Passport size photo, Aadhar card photocopy, Ration card photocopy, certificate from village administrative officer stating that the person has not received benefits from other departments, Savings Banked Account",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Muscular_Dystrophy" ]
+   "categoryOfDisability":["Muscular_Dystrophy" ]
   },
   {
    "url": null,
@@ -7032,7 +7032,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Passport size photo, Aadhar card photocopy, Ration card photocopy, certificate from village administrative officer stating that the person has not received benefits from other departments savings banked account, ration card photocopy.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Leprosy_Cured" ]
+   "categoryOfDisability":["Leprosy_Cured" ]
   },
   {
    "url": null,
@@ -7062,7 +7062,7 @@
    "religion":null,
    "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Passport size photo, Aadhar card photocopy, ration card photocopy, savings bank passbook.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability", "Visually_Impaired", "Hearing_Impaired","disability_in_arms_and_legs"]
+   "categoryOfDisability":["Locomotor_Disability", "Visually_Impaired", "Hearing_Impaired","disability_in_arms_and_legs"]
   },
   {
    "url": null,
@@ -7092,7 +7092,7 @@
    "religion":null,
    "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Passport size photo, Aadhar card photocopy, ration card photocopy, savings bank passbook.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Intellectual_Disability", "Locomotor_Disability", "Muscular_Dystrophy"]
+   "categoryOfDisability":["Intellectual_Disability", "Locomotor_Disability", "Muscular_Dystrophy"]
   },
   {
    "url": null,
@@ -7122,7 +7122,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Passport size photo, Aadhar card photocopy, ration card photocopy, certificate from village administrative officer stating that the person has not received benefits from other departments, linked savings banked account, ration card photocopy.Cooperative societies’ membership certificate.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7152,7 +7152,7 @@
    "religion":null,
    "requiredDocuments":"Apart from application registered online, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the notice of the scheme should be submitted to the General Manager, District Industrial Center ,Tirunelveli.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7182,7 +7182,7 @@
    "religion":null,
    "requiredDocuments":"Along with the application registered online, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the notice of the scheme to be produced to General Manager, District Industrial Center , Tirunelveli.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7212,7 +7212,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, Passbook of savings bank account",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7242,7 +7242,7 @@
    "religion":null,
    "requiredDocuments":"Application, Attestation by the Head Master Photocopy of Identity card for disabled persons, Aadhar card photocopy Ration card photocopy, Passbook of savings bank account, Proof which confirms that the student has scored more than 40% the previous year",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7272,7 +7272,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, Passbook of savings bank account, Proof which confirms that the student has scored more than 40% the previous year",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7302,7 +7302,7 @@
    "religion":null,
    "requiredDocuments":"Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, Passbook copy of savings bank account",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7332,7 +7332,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy,ration card photocopy,3 passport size photos, Proof that the persons is associated with office or school or college or hospital.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Visually_Impaired"]
+   "categoryOfDisability":["Visually_Impaired"]
   },
   {
    "url": null,
@@ -7362,7 +7362,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy,3 passport size photos",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["21_Type_of_Disability","none_of_the_list", "more_than_one"]
+   "categoryOfDisability":["21_Type_of_Disability","none_of_the_list", "more_than_one"]
   },
   {
    "url": null,
@@ -7392,7 +7392,7 @@
    "religion":null,
    "requiredDocuments":"A Photocopy of Identity card for disabled persons shall be produced to the conductor of State owned Government bus.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability"," Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability"," Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7422,7 +7422,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, marriage invitation,marriage photo, marriage register certificate, village administrative officers proof that the concerned person is marrying for the first time",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7452,7 +7452,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy,ration card photocopy, marriage invitation, marriage photo, marriage register certificate, village administrative officer’s proof that the concerned person is marrying for the first time, Graduation degree certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -7482,7 +7482,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person, Certificate of proof from educational or service letter from employee.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability"]
+   "categoryOfDisability":["Locomotor_Disability"]
   },
   {
    "url": null,
@@ -7512,7 +7512,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy,ration card photocopy, photograph of the person, Tailoring course completion certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Intellectual_Disability"]
+   "categoryOfDisability":["Locomotor_Disability","Intellectual_Disability"]
   },
 
   
@@ -7545,7 +7545,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability"]
+    "categoryOfDisability":[ "Locomotor_Disability"]
    },
 
    {
@@ -7576,7 +7576,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability" , "Intellectual_Disability","Muscular_Dystrophy"]
+    "categoryOfDisability":[ "Locomotor_Disability" , "Intellectual_Disability","Muscular_Dystrophy"]
    },
 
    {
@@ -7607,7 +7607,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability"]
+    "categoryOfDisability":[ "Locomotor_Disability"]
    },
 
    {
@@ -7638,7 +7638,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability", "Cerebral_Palsy","Muscular_Dystrophy"]
+    "categoryOfDisability":[ "Locomotor_Disability", "Cerebral_Palsy","Muscular_Dystrophy"]
    },
 
    {
@@ -7669,7 +7669,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability"]
+    "categoryOfDisability":[ "Locomotor_Disability"]
    },
 
    {
@@ -7700,7 +7700,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability"]
+    "categoryOfDisability":[ "Locomotor_Disability"]
    },
 
    {
@@ -7731,7 +7731,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability","Cerebral_Palsy"]
+    "categoryOfDisability":[ "Locomotor_Disability","Cerebral_Palsy"]
    },
 
    {
@@ -7762,7 +7762,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":["Locomotor_Disability"]
+    "categoryOfDisability":["Locomotor_Disability"]
    },
 
    {
@@ -7793,7 +7793,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability", "Muscular_Dystrophy"]
+    "categoryOfDisability":[ "Locomotor_Disability", "Muscular_Dystrophy"]
    },
 
    {
@@ -7824,7 +7824,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Hearing_Impaired"]
+    "categoryOfDisability":[ "Hearing_Impaired"]
    },
 
    {
@@ -7855,7 +7855,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Visually_Impaired"]
+    "categoryOfDisability":[ "Visually_Impaired"]
    },
 
    {
@@ -7886,7 +7886,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Visually_Impaired"]
+    "categoryOfDisability":[ "Visually_Impaired"]
    },
 
    {
@@ -7917,7 +7917,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":["Visually_Impaired"]
+    "categoryOfDisability":["Visually_Impaired"]
    },
 
    {
@@ -7948,7 +7948,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":["Visually_Impaired"]
+    "categoryOfDisability":["Visually_Impaired"]
    },
 
    {
@@ -7979,7 +7979,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Visually_Impaired","Cerebral_Palsy"]
+    "categoryOfDisability":[ "Visually_Impaired","Cerebral_Palsy"]
    },
 
    {
@@ -8010,7 +8010,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Hearing_Impaired" ,"Visually_Impaired"]
+    "categoryOfDisability":[ "Hearing_Impaired" ,"Visually_Impaired"]
    },
 
    {
@@ -8041,7 +8041,7 @@
     "religion":null,
     "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person",
     "isDifferntlyAbled": true,
-    "typeOfDisability":[ "Locomotor_Disability","Cerebral_Palsy"]
+    "categoryOfDisability":[ "Locomotor_Disability","Cerebral_Palsy"]
    },
   {
    "url": null,
@@ -8071,7 +8071,7 @@
    "religion":null,
    "requiredDocuments":"Photocopy of Identity card for disabled persons, Aadhar card photocopy, Ration card photocopy ,Head of the family shall have to visit directly for application.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["21_Type_of_Disability","none_of_the_list" ,"more_than_one"]
+   "categoryOfDisability":["21_Type_of_Disability","none_of_the_list" ,"more_than_one"]
   },
   {
    "url": null,
@@ -8101,7 +8101,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person, National Identity Card with Medical Certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Diosability"]
+   "categoryOfDisability":["Locomotor_Diosability"]
   },
   {
    "url": null,
@@ -8131,7 +8131,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person, National Identity Card with Medical Certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
+   "categoryOfDisability":["Locomotor_Disability","Visually_Impaired", "Hearing_Impaired"]
   },
   {
    "url": null,
@@ -8161,7 +8161,7 @@
    "religion":null,
    "requiredDocuments":"National Identity Card with Medical Certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Intellectual_Disability", "Visually_Impaired","Hearing_Impaired", "Autism_Spectrum_Disorder"]
+   "categoryOfDisability":["Intellectual_Disability", "Visually_Impaired","Hearing_Impaired", "Autism_Spectrum_Disorder"]
   },
   {
    "url": null,
@@ -8191,7 +8191,7 @@
    "religion":null,
    "requiredDocuments":"National Identity Card with Medical Certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":[ "Intellectual_Disability" ,"Autism_Spectrum_Disorder"]
+   "categoryOfDisability":[ "Intellectual_Disability" ,"Autism_Spectrum_Disorder"]
   },
   {
    "url": null,
@@ -8221,7 +8221,7 @@
    "religion":null,
    "requiredDocuments":"National Identity Card with Medical Certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["Hearing_Impaired"]
+   "categoryOfDisability":["Hearing_Impaired"]
   },
   {
    "url": null,
@@ -8251,7 +8251,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person, National Identity Card with Medical Certificate",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["mental_Illness"]
+   "categoryOfDisability":["mental_Illness"]
   },
   {
    "url": null,
@@ -8281,7 +8281,7 @@
    "religion":null,
    "requiredDocuments":"Application, Photocopy of Identity card for disabled persons, Aadhar card photocopy, ration card photocopy, photograph of the person, National Identity Card with Medical Certificate, Death Certificate.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["21_Type_of_Disability","none_of_the_list" ,"more_than_one"]
+   "categoryOfDisability":["21_Type_of_Disability","none_of_the_list" ,"more_than_one"]
   },
     {
     "url":"www.msmeonline.tn.gov.in\/uyegp",
