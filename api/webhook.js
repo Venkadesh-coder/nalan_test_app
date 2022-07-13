@@ -249,7 +249,8 @@ module.exports = async (req, res) => {
 
     const farmerFn = async (ctx) => {
       isFarmer = true;
-      bot.telegram.sendMessage(ctx.chat.id, '[2/2] பயனாளியின் தேவை / வகை என்ன?', {
+
+      bot.telegram.sendMessage(ctx.chat.id, '[2/2] பயனாளியின் தேவை என்ன?', {
         reply_markup: {
           inline_keyboard: [
             [{
@@ -273,8 +274,8 @@ module.exports = async (req, res) => {
       });
     };
 
-    const farmerNeedOptionsFn = async (ctx) => {
-     let farmerNeeds =  ctx.update.callback_query.data;
+    const farmerNeedOptions = async (ctx) => {
+      let farmerNeeds =  ctx.update.callback_query.data;
       const schemes = data.filter((item) => {
         if (item.isFarmer === true && item.farmerNeeds.includes(farmerNeeds)) {
           return true;
@@ -805,11 +806,11 @@ const womenOptionsFn = async (ctx) => {
 
     
 
-    bot.action('seeds', farmerNeedOptionsFn);
-    bot.action('tools', farmerNeedOptionsFn);
-    bot.action('fertilizer', farmerNeedOptionsFn);
-    bot.action('cattle', farmerNeedOptionsFn);
-    bot.action('small_grain', farmerNeedOptionsFn);
+    bot.action('seeds', farmerNeedOptions);
+    bot.action('tools', farmerNeedOptions);
+    bot.action('fertilizer', farmerNeedOptions);
+    bot.action('cattle', farmerNeedOptions);
+    bot.action('small_grain', farmerNeedOptions);
 
 
     // diff
@@ -822,6 +823,7 @@ const womenOptionsFn = async (ctx) => {
     bot.action('Intellectual_Disability', disabilitytypeFn);
     bot.action('Autism_Spectrum_Disorder', disabilitytypeFn);
     bot.action('mental_Illness', disabilitytypeFn);
+    bot.action('Muscular_Dystrophy', disabilitytypeFn);
     bot.action('more_than_one', disabilitytypeFn);
     bot.action('Cerebral_Palsy', disabilitytypeFn);
     bot.action('none_of_the_list', disabilitytypeFn);
@@ -832,15 +834,15 @@ const womenOptionsFn = async (ctx) => {
 
 // women
     bot.action('Women', womenFn);
-    bot.action("Single", womenOptionsFn);
-    bot.action("Separated", womenOptionsFn);
-    bot.action("Divorced", womenOptionsFn);
-    bot.action("Maternity", womenOptionsFn);
-    bot.action("MarriageAssit", womenOptionsFn);
-    bot.action("Miscarriage", womenOptionsFn);
-    bot.action("Medical", womenOptionsFn);
-    bot.action("SelfEmployment", womenOptionsFn);
-    bot.action("IndividualLoan", womenOptionsFn);
+    bot.action('Single', womenOptionsFn);
+    bot.action('Separated', womenOptionsFn);
+    bot.action('Divorced', womenOptionsFn);
+    bot.action('Maternity', womenOptionsFn);
+    bot.action('MarriageAssit', womenOptionsFn);
+    bot.action('Miscarriage', womenOptionsFn);
+    bot.action('Medical', womenOptionsFn);
+    bot.action('SelfEmployment', womenOptionsFn);
+    bot.action('IndividualLoan', womenOptionsFn);
 
 
     //student
