@@ -16,6 +16,7 @@ const bot = new Telegraf(token, {
   telegram: { webhookReply: true }
 });
 
+// Creating Start with Category details
 
 const startFn = (ctx) => {
   console.log(ctx.from);
@@ -93,11 +94,16 @@ module.exports = async (req, res) => {
     let income = null;
     let age = null;
 
+
+// Creating greeting
+
     const greetingGender = {
       male: "சகோதரா",
       female: "சகோதரி",
       transgender: "சகோ"
     };
+
+// Creating gender
 
     const catogeryFn = (ctx) => {
     catogery = ctx.update.callback_query.data;
@@ -120,6 +126,7 @@ module.exports = async (req, res) => {
       });
     };
 
+// Creating Community
 
     const genderFn = (ctx) => {
       gender = ctx.update.callback_query.data;
@@ -151,6 +158,8 @@ module.exports = async (req, res) => {
       });
     };
 
+// Creating Education status
+
     const communityFn = (ctx) => {
       community = ctx.update.callback_query.data;
       bot.telegram.sendMessage(ctx.chat.id, '[4/5] பின்வருவனற்றுள் எது பயனாளியைக் குறிக்கும்?', {
@@ -167,6 +176,8 @@ module.exports = async (req, res) => {
         }
       });
     };
+
+   // Creating Age 
 
     const studentFn = async (ctx) => {
       isSchoolStudent = ctx.update.callback_query.data === 'schoolStudent';
@@ -209,6 +220,8 @@ module.exports = async (req, res) => {
       }
     };
 
+// Creating Income
+
     const ageFn = (ctx) => {
       age = ctx.update.callback_query.data;
       bot.telegram.sendMessage(ctx.chat.id, '[5/5] உங்கள் குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம் என்ன என்ன?', {
@@ -247,6 +260,8 @@ module.exports = async (req, res) => {
       });
     };
 
+   // Creating farmer requirements 
+
     const farmerFn = async (ctx) => {
       isFarmer = true;
 
@@ -273,6 +288,8 @@ module.exports = async (req, res) => {
         }
       });
     };
+
+   // farmer filter 
 
     const farmerNeedOptions = async (ctx) => {
       let farmerNeeds =  ctx.update.callback_query.data;
@@ -367,7 +384,8 @@ module.exports = async (req, res) => {
         });
       }
     }
-//women
+
+// women category information    
 
 const womenFn = async (ctx) => {
   isWomen = true;
@@ -416,6 +434,8 @@ const womenFn = async (ctx) => {
     }
   });
 };
+
+// women filter
 
 const womenOptionsFn = async (ctx) => {
   let womenType =  ctx.update.callback_query.data;
@@ -513,7 +533,7 @@ const womenOptionsFn = async (ctx) => {
 
 
 
-// disability
+// disability category information
 
     const differentlyAbledFn = async (ctx) => {
       isDifferntlyAbled = true;
@@ -561,6 +581,8 @@ const womenOptionsFn = async (ctx) => {
         }
       });
     };
+
+   // disability filter 
 
     const disabilitytypeFn = async (ctx) => {
      let categoryOfDisability =  ctx.update.callback_query.data;
@@ -791,20 +813,18 @@ const womenOptionsFn = async (ctx) => {
         });
       }
     }
-
+// start
     bot.command('start', startFn);
 
     bot.on('text', startFn);
     bot.on('message', startFn);
     bot.action('start', startFn);
-
+//Gender
     bot.action('male', genderFn);
     bot.action('female', genderFn);
     bot.action('transgender', genderFn);
-
+//farmer
     bot.action('farmer', farmerFn);
-
-    
 
     bot.action('seeds', farmerNeedOptions);
     bot.action('tools', farmerNeedOptions);
@@ -813,7 +833,7 @@ const womenOptionsFn = async (ctx) => {
     bot.action('small_grain', farmerNeedOptions);
 
 
-    // diff
+// disability
 
     bot.action('DifferntlyAbled', differentlyAbledFn);
     
@@ -827,13 +847,11 @@ const womenOptionsFn = async (ctx) => {
     bot.action('more_than_one', disabilitytypeFn);
     bot.action('Cerebral_Palsy', disabilitytypeFn);
     bot.action('none_of_the_list', disabilitytypeFn);
-// ["none of the list" ,"more than one","Locomotor Disability","Hearing Impaired" ,"Visually Impaired" ,"Cerebral Palsy","Autism spectrum","Intellectual Disability","Muscular Dystrophy","mental Illness"
-// ].forEach((inc) => {
-//       bot.action(inc, disabilitytypeFn);
-//     });
+
 
 // women
     bot.action('Women', womenFn);
+
     bot.action('Single', womenOptionsFn);
     bot.action('Separated', womenOptionsFn);
     bot.action('Divorced', womenOptionsFn);
@@ -845,14 +863,17 @@ const womenOptionsFn = async (ctx) => {
     bot.action('IndividualLoan', womenOptionsFn);
 
 
-    //student
+//student
     bot.action('student', catogeryFn);
 
+
+//Community   
     bot.action('OC', communityFn);
     bot.action('BC', communityFn);
     bot.action('MBC', communityFn);
     bot.action('SC', communityFn);
     bot.action('ST', communityFn);
+//Education
   
     bot.action('schoolStudent', studentFn);
     bot.action('collegeStudent', studentFn);
