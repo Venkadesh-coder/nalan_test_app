@@ -377,7 +377,7 @@ module.exports = async (req, res) => {
           inline_keyboard: [
             [{
               text: "கை கால் இயக்க குறைபாடு ",
-              callback_data: "LocomotorDisability"
+              callback_data: "Locomotor Disability"
             }], [{
               text: "பார்வை திறன் குறைபாடு",
               callback_data: "Visually Impaired"
@@ -415,7 +415,7 @@ module.exports = async (req, res) => {
     const disabilitytypeFn = async (ctx) => {
       typeOfDisability =  ctx.update.callback_query.data;
       const schemes = data.filter((item) => {
-        if (item.isFarmer === true && item.farmerNeeds.includes(typeOfDisability)) {
+        if (item.isDifferntlyAbled === true && item.typeOfDisability.includes(typeOfDisability)) {
           return true;
         } else {
           return false;
@@ -661,7 +661,7 @@ module.exports = async (req, res) => {
     // diff
 
     bot.action('DifferntlyAbled', differentlyAbledFn);
-    bot.action('LocomotorDisability', disabilitytypeFn);
+    bot.action('Locomotor Disability', disabilitytypeFn);
     bot.action('Visually Impaired', disabilitytypeFn);
     bot.action('Hearing Impaired', disabilitytypeFn);
     bot.action('Intellectual Disability', disabilitytypeFn);

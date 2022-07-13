@@ -7062,7 +7062,7 @@
    "religion":null,
    "requiredDocuments":"Application,Photocopy of Identity card for disabled persons, Passport size photo, Aadhar card photocopy, ration card photocopy, savings bank passbook.",
    "isDifferntlyAbled": true,
-   "typeOfDisability":["LocomotorDisability", "Visually Impaired", "Hearing Impaired"," disability in arms and legs"]
+   "typeOfDisability":["Locomotor Disability", "Visually Impaired", "Hearing Impaired"," disability in arms and legs"]
   },
   {
    "url": null,
