@@ -661,14 +661,25 @@ module.exports = async (req, res) => {
     // diff
 
     bot.action('DifferntlyAbled', differentlyAbledFn);
+    bot.action('Locomotor Disability', differentlyAbledFn);
+    bot.action('Visually Impaired', differentlyAbledFn);
+    bot.action('Hearing Impaired', differentlyAbledFn);
+    bot.action('Intellectual Disability', differentlyAbledFn);
+    bot.action('Autism spectrum', differentlyAbledFn);
+    bot.action('mental Illness', differentlyAbledFn);
+    bot.action('Muscular Dystrophy', differentlyAbledFn);
+    bot.action('more than one', differentlyAbledFn);
+    bot.action('none of the list', differentlyAbledFn);
+    
 
 
-    bot.action('none of the list', disabilitytypeFn);
+
+   /* bot.action('none of the list', disabilitytypeFn);
 
 ["none of the list" ,"more than one","Locomotor Disability","Hearing Impaired" ,"Visually Impaired" ,"Cerebral Palsy","Autism spectrum","Intellectual Disability","Muscular Dystrophy","mental Illness"
 ].forEach((inc) => {
       bot.action(inc, disabilitytypeFn);
-    });
+    }); */
 
 
 
