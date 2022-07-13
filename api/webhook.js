@@ -661,15 +661,15 @@ module.exports = async (req, res) => {
     // diff
 
     bot.action('DifferntlyAbled', differentlyAbledFn);
-    bot.action('Locomotor Disability', differentlyAbledFn);
-    bot.action('Visually Impaired', differentlyAbledFn);
-    bot.action('Hearing Impaired', differentlyAbledFn);
-    bot.action('Intellectual Disability', differentlyAbledFn);
-    bot.action('Autism spectrum', differentlyAbledFn);
-    bot.action('mental Illness', differentlyAbledFn);
-    bot.action('Muscular Dystrophy', differentlyAbledFn);
-    bot.action('more than one', differentlyAbledFn);
-    bot.action('none of the list', differentlyAbledFn);
+    bot.action('Locomotor Disability', disabilitytypeFn);
+    bot.action('Visually Impaired', disabilitytypeFn);
+    bot.action('Hearing Impaired', disabilitytypeFn);
+    bot.action('Intellectual Disability', disabilitytypeFn);
+    bot.action('Autism spectrum', disabilitytypeFn);
+    bot.action('mental Illness', disabilitytypeFn);
+    bot.action('Muscular Dystrophy', disabilitytypeFn);
+    bot.action('more than one', disabilitytypeFn);
+    bot.action('none of the list', disabilitytypeFn);
     
 
 
