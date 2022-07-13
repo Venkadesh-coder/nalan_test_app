@@ -377,35 +377,39 @@ module.exports = async (req, res) => {
           inline_keyboard: [
             [{
               text: "கை கால் இயக்க குறைபாடு ",
-              callback_data: "LocomotorDisability"
+              callback_data: "Locomotor_Disability"
             }], [{
               text: "பார்வை திறன் குறைபாடு",
-              callback_data: "Visually Impaired"
+              callback_data: "Visually_Impaired"
             }], [{
               text: "செவிதிறன் குறைபாடு",
-              callback_data: "Hearing Impaired"
+              callback_data: "Hearing_Impaired"
             }], [{
               text: "மனவளர்ச்சி குன்றியோர் ",
-              callback_data: "Intellectual Disability"
+              callback_data: "Intellectual_Disability"
             }],  [{
               text: "புற உலக சிந்தனையாள்ர்",
-              callback_data: "Autism spectrum"
+              callback_data: "Autism_Spectrum_Disorder"
             }],
             [{
               text: "மன நலம் குன்றியோர்",
-              callback_data: "mental Illness"
+              callback_data: "mental_Illness"
             }],
             [{
               text: "தசை சிதைவு நோய்",
-              callback_data: "Muscular Dystrophy"
+              callback_data: "Muscular_Dystrophy"
             }],
             [{
               text: "பல் வகை ஊனம்",
-              callback_data: "more than one"
+              callback_data: "more_than_one"
+            }],
+            [{
+              text: "மூளை முடக்குவாதம்",
+              callback_data: "Cerebral_Palsy"
             }],
             [{
               text: "மேற்கண்ட எதுவும் இல்லை",
-              callback_data: "none of the list"
+              callback_data: "none_of_the_list"
             }]
           ]
         }
@@ -661,23 +665,20 @@ module.exports = async (req, res) => {
     // diff
 
     bot.action('DifferntlyAbled', differentlyAbledFn);
-    bot.action('LocomotorDisability', disabilitytypeFn);
-    bot.action('Visually Impaired', disabilitytypeFn);
-    bot.action('Hearing Impaired', disabilitytypeFn);
-    bot.action('Intellectual Disability', disabilitytypeFn);
-    bot.action('Autism spectrum', disabilitytypeFn);
-    bot.action('mental Illness', disabilitytypeFn);
-    bot.action('Muscular Dystrophy', disabilitytypeFn);
-    bot.action('more than one', disabilitytypeFn);
-    bot.action('none of the list', disabilitytypeFn);
-
-
-    /*bot.action('none of the list', disabilitytypeFn);
-
-["none of the list" ,"more than one","Locomotor Disability","Hearing Impaired" ,"Visually Impaired" ,"Cerebral Palsy","Autism spectrum","Intellectual Disability","Muscular Dystrophy","mental Illness"
-].forEach((inc) => {
-      bot.action(inc, disabilitytypeFn);
-    }); */
+    
+    bot.action('Locomotor_Disability', disabilitytypeFn);
+    bot.action('Visually_Impaired', disabilitytypeFn);
+    bot.action('Hearing_Impaired', disabilitytypeFn);
+    bot.action('Intellectual_Disability', disabilitytypeFn);
+    bot.action('Autism_Spectrum_Disorder', disabilitytypeFn);
+    bot.action('mental_Illness', disabilitytypeFn);
+    bot.action('more_than_one', disabilitytypeFn);
+    bot.action('Cerebral_Palsy', disabilitytypeFn);
+    bot.action('none_of_the_list', disabilitytypeFn);
+// ["none of the list" ,"more than one","Locomotor Disability","Hearing Impaired" ,"Visually Impaired" ,"Cerebral Palsy","Autism spectrum","Intellectual Disability","Muscular Dystrophy","mental Illness"
+// ].forEach((inc) => {
+//       bot.action(inc, disabilitytypeFn);
+//     });
 
 
 
