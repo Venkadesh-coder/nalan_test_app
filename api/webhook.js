@@ -30,11 +30,11 @@ const startFn = (ctx) => {
           callback_data: 'farmer'
         }], [{
           text: "மாற்றுத்திறனாளி",
-          callback_data: 'differently_abled'
+          callback_data: 'DifferntlyAbled'
         }],
         [{
           text: "தொழில் முனைவோர்",
-          callback_data: 'entrepreneur'
+          callback_data: 'Entrepreneur'
         }],
         [{
           text: "மகளிர்",
@@ -42,11 +42,11 @@ const startFn = (ctx) => {
         }],
         [{
           text: "முதியோர்",
-          callback_data: 'senior_citizen'
+          callback_data: 'SeniorCitizen'
         }],
         [{
           text: "மேற்கண்ட எதுவும் இல்லை",
-          callback_data: 'none_of_the_above'
+          callback_data: 'NoneOfTheAbove'
         }],
       ]
     }
@@ -68,10 +68,27 @@ module.exports = async (req, res) => {
     let isSchoolStudent = false;
     let isCollegeStudent = false;
     let isFarmer = false;
-    let isDifferentlyAbled = false;
-    let isEntrepreneur = false;
-    let isWomen = false;
-    let isSeniorCitizen = false;
+    let isWomen= false;
+    let isDivorced= false;
+    let isMarried= false;
+    let isSeparated= false;
+    let isSingle= false ; 
+    let isMiscarriage= false;
+    let isWidow= false;
+    let isMaternity= false;
+    let isMarriageAssit= false;
+    let isMedical= false;
+    let isJournalist= false;      
+    let isHandLoomWeavers= false;
+    let isFisher= false;
+    let isEnterpreneur= false;  
+    let isWriter= false;
+    let isSeniorCitizen= false;
+    let isIndividualLoan= false;
+    let isAccident= false;
+    let isDeath= false;
+    let isNonDeath= false;
+    let isDifferntlyAbled=  false;
     let isNoneOfTheAbove = false;
     let income = null;
     let age = null;
@@ -141,10 +158,10 @@ module.exports = async (req, res) => {
           inline_keyboard: [
             [{
               text: "பள்ளி மாணவர் (1ம் வகுப்பு - 12ம் வகுப்பு)",
-              callback_data: "schoolStudent"
+              callback_data: 'schoolStudent'
             }], [{
               text: "கல்லூரி மாணவர் (பட்ட/பட்டய/தொழிற்கல்வி/முனைவர் படிப்பு)",
-              callback_data: "collegeStudent"
+              callback_data: 'collegeStudent'
             }]
           ]
         }
@@ -155,34 +172,34 @@ module.exports = async (req, res) => {
       isSchoolStudent = ctx.update.callback_query.data === 'schoolStudent';
       isCollegeStudent = ctx.update.callback_query.data === 'collegeStudent';
       isStudent = isSchoolStudent || isCollegeStudent;
-      if (!isStudent) {
+      if (isStudent || isEnterpreneur || isNoneOfTheAbove ) {
         bot.telegram.sendMessage(ctx.chat.id, '[4/5] பயனாளியின் வயது என்ன?', {
           reply_markup: {
             inline_keyboard: [
               [{
                 text: "30 அல்லது அதற்கும் கீழ்",
-                callback_data: "30"
+                callback_data: '30'
               }], [{
                 text: "31-40",
-                callback_data: "40"
+                callback_data: '40'
               }], [{
                 text: "41-50",
-                callback_data: "50"
+                callback_data: '50'
               }], [{
                 text: "51-60",
-                callback_data: "60"
+                callback_data: '60'
               }],  [{
                 text: "61-70",
-                callback_data: "70"
+                callback_data: '70'
               }], [{
                 text: "71-80",
-                callback_data: "80"
+                callback_data: '80'
               }], [{
                 text: "81-90",
-                callback_data: "90"
+                callback_data: '90'
               }], [{
                 text: "100 அல்லது அதற்கும் மேல்",
-                callback_data: "100"
+                callback_data: '100'
               }]
             ]
           }
@@ -350,8 +367,144 @@ module.exports = async (req, res) => {
         });
       }
     }
+// disability
 
-    
+    const differentlyAbledFn = async (ctx) => {
+      isDifferntlyAbled = true;
+
+      bot.telegram.sendMessage(ctx.chat.id, '[2/2] மாற்றுத் திறனாளித் தன்மையைத் தேர்வு செய்க?', {
+        reply_markup: {
+          inline_keyboard: [
+            [{
+              text: "கை கால் இயக்க குறைபாடு ",
+              callback_data: "Locomotor Disability"
+            }], [{
+              text: "பார்வை திறன் குறைபாடு",
+              callback_data: "Visually Impaired"
+            }], [{
+              text: "செவிதிறன் குறைபாடு",
+              callback_data: "Hearing Impaired"
+            }], [{
+              text: "மனவளர்ச்சி குன்றியோர் ",
+              callback_data: "Intellectual Disability"
+            }],  [{
+              text: "புற உலக சிந்தனையாள்ர்",
+              callback_data: "Autism spectrum"
+            }],
+            [{
+              text: "மன நலம் குன்றியோர்",
+              callback_data: "mental Illness"
+            }],
+            [{
+              text: "தசை சிதைவு நோய்",
+              callback_data: "Muscular Dystrophy"
+            }],
+            [{
+              text: "பல் வகை ஊனம்",
+              callback_data: "more than one"
+            }],
+            [{
+              text: "மேற்கண்ட எதுவும் இல்லை",
+              callback_data: "none of the list"
+            }]
+          ]
+        }
+      });
+    };
+
+    const disabilitytypeFn = async (ctx) => {
+      typeOfDisability =  ctx.update.callback_query.data;
+      const schemes = data.filter((item) => {
+        if (item.isFarmer === true && item.farmerNeeds.includes(typeOfDisability)) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      if (schemes.length) {
+        const messagesArray = [];
+        let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+        firstMessage += '===============================\n\n';
+        messagesArray.push(firstMessage);
+        let message = '';
+        schemes.forEach((scheme, index) => {
+          let benefits = '';
+          let education = '';
+          let description = '';
+          let url = '';
+          let religion = '';
+          let maxIncome = '';
+          scheme.benefits?.forEach((benefit) => {
+            benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+          });
+
+          let eligibility = '';
+          if (scheme.eligibility) {
+            eligibility = '<b>இதர தகுதி</b>:\n';
+            scheme.eligibility?.forEach((elig) => {
+              eligibility += `<b>*</b> ${elig.value}\n`;
+            });
+          }
+
+          if (scheme.education) {
+            education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+          }
+
+          if (scheme.religion && scheme.religion.length) {
+            religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+          }
+
+          if (scheme.description) {
+            description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+          }
+
+          if (scheme.maxIncome) {
+            maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+          }
+
+          if (scheme.url) {
+            url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+          }
+          let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+          currentMessage += '===============================\n\n';
+
+          if ((message+currentMessage).length >= 4096) {
+            messagesArray.push(message);
+            message = currentMessage;
+          } else {
+            message += currentMessage;
+          }
+        });
+
+        messagesArray.push(message);
+
+        for (let mess of messagesArray) {
+          await ctx.replyWithHTML(mess);
+        }
+        await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+          reply_markup: {
+            inline_keyboard: [
+              [{
+                text: "மீண்டும் தொடங்கு",
+                callback_data: 'start'
+              }
+            ]]
+          }
+        });
+      } else {
+        await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+          reply_markup: {
+            inline_keyboard: [
+              [{
+                text: "மீண்டும் தொடங்கு",
+                callback_data: 'start'
+              }
+            ]]
+          }
+        });
+      }
+    }
 
     const incomeFn = async (ctx) => {
       income = ctx.update.callback_query.data;
@@ -496,11 +649,28 @@ module.exports = async (req, res) => {
 
     bot.action('farmer', farmerFn);
 
+    
+
     bot.action('seeds', farmerNeedOptions);
     bot.action('tools', farmerNeedOptions);
     bot.action('fertilizer', farmerNeedOptions);
     bot.action('cattle', farmerNeedOptions);
     bot.action('small_grain', farmerNeedOptions);
+
+
+    // diff
+
+    bot.action('DifferntlyAbled', differentlyAbledFn);
+
+
+    bot.action('none of the list', disabilitytypeFn);
+
+["none of the list" ,"more than one","Locomotor Disability","Hearing Impaired" ,"Visually Impaired" ,"Cerebral Palsy","Autism spectrum","Intellectual Disability","Muscular Dystrophy","mental Illness"
+].forEach((inc) => {
+      bot.action(inc, disabilitytypeFn);
+    });
+
+
 
     bot.action('student', catogeryFn);
 
@@ -509,7 +679,7 @@ module.exports = async (req, res) => {
     bot.action('MBC', communityFn);
     bot.action('SC', communityFn);
     bot.action('ST', communityFn);
-
+  
     bot.action('schoolStudent', studentFn);
     bot.action('collegeStudent', studentFn);
     bot.action('non-student', studentFn);
