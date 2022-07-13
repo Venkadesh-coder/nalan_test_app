@@ -93,7 +93,6 @@ module.exports = async (req, res) => {
     let isNoneOfTheAbove = false;
     let income = null;
     let age = null;
-    let farmerNeeds;
 
 
 // Creating greeting
@@ -292,15 +291,15 @@ module.exports = async (req, res) => {
 
    // farmer filter 
 
-    const farmerNeedOptions = async (ctx) => {
-      farmerNeeds =  ctx.update.callback_query.data;
-      const schemes = data.filter((item) => {
-        if (item.isFarmer === true && item.farmerNeeds.includes(farmerNeeds)) {
-          return true;
-        } else {
-          return false;
-        }
-      });
+   const farmerOptionsFn = async (ctx) => {
+    let farmerNeeds =  ctx.update.callback_query.data;
+     const schemes = data.filter((item) => {
+       if (item.isFarmer === true && item.farmerNeeds.includes(farmerNeeds)) {
+         return true;
+       } else {
+         return false;
+       }
+     });
 
       if (schemes.length) {
         const messagesArray = [];
@@ -737,11 +736,12 @@ const womenOptionsFn = async (ctx) => {
 //farmer
     bot.action('farmer', farmerFn);
 
-    bot.action('seeds', farmerNeedOptions);
-    bot.action('tools', farmerNeedOptions);
-    bot.action('fertilizer', farmerNeedOptions);
-    bot.action('cattle', farmerNeedOptions);
-    bot.action('small_grain', farmerNeedOptions);
+    bot.action('seeds', farmerOptionsFn);
+    bot.action('tools', farmerOptionsFn);
+    bot.action('cattle', farmerOptionsFn);
+    bot.action('fertilizer', farmerOptionsFn);
+    bot.action('small_grain', farmerOptionsFn);
+   
 
 
 // disability
