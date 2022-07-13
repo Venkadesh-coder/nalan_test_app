@@ -377,7 +377,7 @@ module.exports = async (req, res) => {
           inline_keyboard: [
             [{
               text: "கை கால் இயக்க குறைபாடு ",
-              callback_data: "Locomotor Disability"
+              callback_data: "LocomotorDisability"
             }], [{
               text: "பார்வை திறன் குறைபாடு",
               callback_data: "Visually Impaired"
@@ -661,7 +661,7 @@ module.exports = async (req, res) => {
     // diff
 
     bot.action('DifferntlyAbled', differentlyAbledFn);
-    bot.action('Locomotor Disability', disabilitytypeFn);
+    bot.action('LocomotorDisability', disabilitytypeFn);
     bot.action('Visually Impaired', disabilitytypeFn);
     bot.action('Hearing Impaired', disabilitytypeFn);
     bot.action('Intellectual Disability', disabilitytypeFn);
