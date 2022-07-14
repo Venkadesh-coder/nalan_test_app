@@ -70,14 +70,9 @@ module.exports = async (req, res) => {
     let isStudent = false;
     let isSchoolStudent = false;
     let isCollegeStudent = false;
-    let isFarmer = false;
-    let isDifferentlyAbled = false;
-    let isEntrepreneur = false;
-    let isWomen = false;
-    let isSeniorCitizen = false;
-    let isNoneOfTheAbove = false;
     let income = null;
     let age = null;
+    
 
 // greeting
 
@@ -115,7 +110,7 @@ module.exports = async (req, res) => {
     const genderFn = (ctx) => {
       gender = ctx.update.callback_query.data;
       let greet = greetingGender[gender] || ''
-      bot.telegram.sendMessage(ctx.chat.id, `[2/5] நன்றி ${greet}! பயனாளி எந்த சமூகத்தைச் சேர்ந்தவர்? பின்வரும் ஒன்றைத் தேர்ந்தெடுக்கவும்.`, {
+      bot.telegram.sendMessage(ctx.chat.id, `[3sss/6] நன்றி ${greet}! பயனாளி எந்த சமூகத்தைச் சேர்ந்தவர்? பின்வரும் ஒன்றைத் தேர்ந்தெடுக்கவும்.`, {
         reply_markup: {
           inline_keyboard: [
             [{
@@ -146,7 +141,7 @@ module.exports = async (req, res) => {
 
     const communityFn = (ctx) => {
       community = ctx.update.callback_query.data;
-      bot.telegram.sendMessage(ctx.chat.id, '[3/5] பின்வருவனற்றுள் எது பயனாளியைக் குறிக்கும்?', {
+      bot.telegram.sendMessage(ctx.chat.id, '[4/6] பின்வருவனற்றுள் எது பயனாளியைக் குறிக்கும்?', {
         reply_markup: {
           inline_keyboard: [
             [{
@@ -163,12 +158,12 @@ module.exports = async (req, res) => {
 
     //Creating age
 
-    const studentFn = async (ctx) => {
+    const studentFn = (ctx) => {
       isSchoolStudent = ctx.update.callback_query.data === 'schoolStudent';
       isCollegeStudent = ctx.update.callback_query.data === 'collegeStudent';
       isStudent = isSchoolStudent || isCollegeStudent;
       if (!isStudent) {
-        bot.telegram.sendMessage(ctx.chat.id, '[4/5] பயனாளியின் வயது என்ன?', {
+        bot.telegram.sendMessage(ctx.chat.id, '[5/6] பயனாளியின் வயது என்ன?', {
           reply_markup: {
             inline_keyboard: [
               [{
@@ -208,7 +203,7 @@ module.exports = async (req, res) => {
 
     const ageFn = (ctx) => {
       age = ctx.update.callback_query.data;
-      bot.telegram.sendMessage(ctx.chat.id, '[5/5] உங்கள் குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம் என்ன என்ன?', {
+      bot.telegram.sendMessage(ctx.chat.id, '[6/6] உங்கள் குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம் என்ன என்ன?', {
         reply_markup: {
           inline_keyboard: [
             [{
