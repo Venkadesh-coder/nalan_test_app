@@ -93,6 +93,7 @@ module.exports = async (req, res) => {
     let isNoneOfTheAbove = false;
     let income = null;
     let age = null;
+    let 
 
 
 // Creating greeting
@@ -103,6 +104,550 @@ module.exports = async (req, res) => {
       transgender: "சகோ"
     };
 
+    //nonoftheabove
+
+    const noneOfTheAboveFn = (ctx) => {
+      console.log(ctx.from);
+      isNoneOfTheAbove = true;
+      ctx.replyWithHTML(`வணக்கம் ${ctx.from.first_name}! நலன் இயலிக்கு உங்களை வரவேற்கிறோம். மக்களுக்காக அரசு இயற்றும் திட்டங்களை எளிய முறையில் மக்களுக்கு கொண்டு செல்வதே இந்த இயலியின் நோக்கம். சில எளிய கேள்விகளுக்குப் பதிலளிப்பதன் மூலம் அரசு உங்களுக்கு எவ்வாறு உதவும் எனத் தெரிந்து கொள்ளலாம்.\n\n [1/6] பயனாளியின் வகையைத் தேர்வு செய்யவும்`, {
+        reply_markup: {
+          inline_keyboard: [
+            [{
+              text: "மீனவர்",
+              callback_data: 'fisherman'
+            }], [{
+              text: "விபத்துக்கான நிதி உதவி",
+              callback_data: 'accidentclaim'
+            }], [{
+              text: "இறப்புக்கான நிதி உதவி",
+              callback_data: 'deathclaim'
+            }],
+            [{
+              text: "கைத்தறி நெசவாளர்",
+              callback_data: 'handloom'
+            }],
+            [{
+              text: "எழுத்தாளர் / பத்திரிக்கையாளர்",
+              callback_data: 'writer'
+            }],
+          ]
+        }
+      });
+    };
+
+//fisher
+    const fisherManFn = async (ctx) => {
+      let  isFisher = true
+      bot.telegram.sendMessage(ctx.chat.id, '[2/2] பயனாளியின் தேவை / வகை என்ன?', {
+        reply_markup: {
+          inline_keyboard: [
+            [{
+              text: "மீன் பிடிப்பவர்",
+              callback_data: "fisher"
+            }], [{
+              text: "மீன் வளர்த்தல்",
+              callback_data: "fishy"
+            }], [{
+              text: "மீன் வளர்ப்பு குளம் அமைத்தல்",
+              callback_data: "fishy_pond"
+            }], [{
+              text: "பள்ளி மாணவர்",
+              callback_data: "schoolstudent"
+            }],  [{
+              text: "கல்லூரி மாணவர்",
+              callback_data: "collegestudent"
+            }],
+            [{
+              text: "திருமண உதவி",
+              callback_data: "marriage"
+            }],
+            [{
+              text: "இறப்பு/விபத்து-க்கான நிதி உதவி",
+              callback_data: "death"
+            }],
+            [{
+              text: "மகப்பபேறு கால நிதி உதவி",
+              callback_data: "delivery"
+            }]
+          ]
+        }
+      });
+      }
+
+      const fisherOptionFn = async (ctx) => {
+        let fisherType =  ctx.update.callback_query.data;
+         const schemes = data.filter((item) => {
+           if (item.isFisher === true && item.fisherType.includes(fisherType)) {
+             return true;
+           } else {
+             return false;
+           }
+         });
+    
+          if (schemes.length) {
+            const messagesArray = [];
+            let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+            firstMessage += '===============================\n\n';
+            messagesArray.push(firstMessage);
+            let message = '';
+            schemes.forEach((scheme, index) => {
+              let benefits = '';
+              let education = '';
+              let description = '';
+              let url = '';
+              let religion = '';
+              let maxIncome = '';
+              scheme.benefits?.forEach((benefit) => {
+                benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+              });
+    
+              let eligibility = '';
+              if (scheme.eligibility) {
+                eligibility = '<b>இதர தகுதி</b>:\n';
+                scheme.eligibility?.forEach((elig) => {
+                  eligibility += `<b>*</b> ${elig.value}\n`;
+                });
+              }
+    
+              if (scheme.education) {
+                education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+              }
+    
+              if (scheme.religion && scheme.religion.length) {
+                religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+              }
+    
+              if (scheme.description) {
+                description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+              }
+    
+              if (scheme.maxIncome) {
+                maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+              }
+    
+              if (scheme.url) {
+                url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+              }
+              let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+              currentMessage += '===============================\n\n';
+    
+              if ((message+currentMessage).length >= 4096) {
+                messagesArray.push(message);
+                message = currentMessage;
+              } else {
+                message += currentMessage;
+              }
+            });
+            messagesArray.push(message);
+    
+            for (let mess of messagesArray) {
+              await ctx.replyWithHTML(mess);
+            }
+            await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+              reply_markup: {
+                inline_keyboard: [
+                  [{
+                    text: "மீண்டும் தொடங்கு",
+                    callback_data: 'start'
+                  }
+                ]]
+              }
+            });
+          } else {
+            await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+              reply_markup: {
+                inline_keyboard: [
+                  [{
+                    text: "மீண்டும் தொடங்கு",
+                    callback_data: 'start'
+                  }
+                ]]
+              }
+            });
+          }
+        }
+
+
+        //handloom
+
+        const handLoomFn = async (ctx) => {
+         // isHandLoomWeavers = ctx.update.callback_query.data === 'handloom';
+         isHandLoomWeavers = true;
+           const schemes = data.filter((item) => {
+             if (item.isHandLoomWeavers ===  isHandLoomWeavers) {
+               return true;
+             } else {
+               return false;
+             }
+           });
+           if (schemes.length) {
+            const messagesArray = [];
+            let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+            firstMessage += '===============================\n\n';
+            messagesArray.push(firstMessage);
+            let message = '';
+            schemes.forEach((scheme, index) => {
+              let benefits = '';
+              let education = '';
+              let description = '';
+              let url = '';
+              let religion = '';
+              let maxIncome = '';
+              scheme.benefits?.forEach((benefit) => {
+                benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+              });
+    
+              let eligibility = '';
+              if (scheme.eligibility) {
+                eligibility = '<b>இதர தகுதி</b>:\n';
+                scheme.eligibility?.forEach((elig) => {
+                  eligibility += `<b>*</b> ${elig.value}\n`;
+                });
+              }
+    
+              if (scheme.education) {
+                education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+              }
+    
+              if (scheme.religion && scheme.religion.length) {
+                religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+              }
+    
+              if (scheme.description) {
+                description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+              }
+    
+              if (scheme.maxIncome) {
+                maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+              }
+    
+              if (scheme.url) {
+                url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+              }
+              let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+              currentMessage += '===============================\n\n';
+    
+              if ((message+currentMessage).length >= 4096) {
+                messagesArray.push(message);
+                message = currentMessage;
+              } else {
+                message += currentMessage;
+              }
+            });
+            messagesArray.push(message);
+    
+            for (let mess of messagesArray) {
+              await ctx.replyWithHTML(mess);
+            }
+            await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+              reply_markup: {
+                inline_keyboard: [
+                  [{
+                    text: "மீண்டும் தொடங்கு",
+                    callback_data: 'start'
+                  }
+                ]]
+              }
+            });
+          } else {
+            await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+              reply_markup: {
+                inline_keyboard: [
+                  [{
+                    text: "மீண்டும் தொடங்கு",
+                    callback_data: 'start'
+                  }
+                ]]
+              }
+            });
+          }
+          }
+
+          //accident
+
+          const accidentClaimFn = async (ctx) => {
+            // isHandLoomWeavers = ctx.update.callback_query.data === 'handloom';
+            isNonDeath = true;
+              const schemes = data.filter((item) => {
+                if (item.isNonDeath ===  isNonDeath) {
+                  return true;
+                } else {
+                  return false;
+                }
+              });
+              if (schemes.length) {
+               const messagesArray = [];
+               let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+               firstMessage += '===============================\n\n';
+               messagesArray.push(firstMessage);
+               let message = '';
+               schemes.forEach((scheme, index) => {
+                 let benefits = '';
+                 let education = '';
+                 let description = '';
+                 let url = '';
+                 let religion = '';
+                 let maxIncome = '';
+                 scheme.benefits?.forEach((benefit) => {
+                   benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+                 });
+       
+                 let eligibility = '';
+                 if (scheme.eligibility) {
+                   eligibility = '<b>இதர தகுதி</b>:\n';
+                   scheme.eligibility?.forEach((elig) => {
+                     eligibility += `<b>*</b> ${elig.value}\n`;
+                   });
+                 }
+       
+                 if (scheme.education) {
+                   education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+                 }
+       
+                 if (scheme.religion && scheme.religion.length) {
+                   religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+                 }
+       
+                 if (scheme.description) {
+                   description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+                 }
+       
+                 if (scheme.maxIncome) {
+                   maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+                 }
+       
+                 if (scheme.url) {
+                   url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+                 }
+                 let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+                 currentMessage += '===============================\n\n';
+       
+                 if ((message+currentMessage).length >= 4096) {
+                   messagesArray.push(message);
+                   message = currentMessage;
+                 } else {
+                   message += currentMessage;
+                 }
+               });
+               messagesArray.push(message);
+       
+               for (let mess of messagesArray) {
+                 await ctx.replyWithHTML(mess);
+               }
+               await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+                 reply_markup: {
+                   inline_keyboard: [
+                     [{
+                       text: "மீண்டும் தொடங்கு",
+                       callback_data: 'start'
+                     }
+                   ]]
+                 }
+               });
+             } else {
+               await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+                 reply_markup: {
+                   inline_keyboard: [
+                     [{
+                       text: "மீண்டும் தொடங்கு",
+                       callback_data: 'start'
+                     }
+                   ]]
+                 }
+               });
+             }
+             }
+
+        // deathclaim
+
+        const deathClaimFn = async (ctx) => {
+          // isHandLoomWeavers = ctx.update.callback_query.data === 'handloom';
+          isDeath = true;
+            const schemes = data.filter((item) => {
+              if (item.isDeath ===  isDeath) {
+                return true;
+              } else {
+                return false;
+              }
+            });
+            if (schemes.length) {
+             const messagesArray = [];
+             let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+             firstMessage += '===============================\n\n';
+             messagesArray.push(firstMessage);
+             let message = '';
+             schemes.forEach((scheme, index) => {
+               let benefits = '';
+               let education = '';
+               let description = '';
+               let url = '';
+               let religion = '';
+               let maxIncome = '';
+               scheme.benefits?.forEach((benefit) => {
+                 benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+               });
+     
+               let eligibility = '';
+               if (scheme.eligibility) {
+                 eligibility = '<b>இதர தகுதி</b>:\n';
+                 scheme.eligibility?.forEach((elig) => {
+                   eligibility += `<b>*</b> ${elig.value}\n`;
+                 });
+               }
+     
+               if (scheme.education) {
+                 education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+               }
+     
+               if (scheme.religion && scheme.religion.length) {
+                 religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+               }
+     
+               if (scheme.description) {
+                 description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+               }
+     
+               if (scheme.maxIncome) {
+                 maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+               }
+     
+               if (scheme.url) {
+                 url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+               }
+               let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+               currentMessage += '===============================\n\n';
+     
+               if ((message+currentMessage).length >= 4096) {
+                 messagesArray.push(message);
+                 message = currentMessage;
+               } else {
+                 message += currentMessage;
+               }
+             });
+             messagesArray.push(message);
+     
+             for (let mess of messagesArray) {
+               await ctx.replyWithHTML(mess);
+             }
+             await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+               reply_markup: {
+                 inline_keyboard: [
+                   [{
+                     text: "மீண்டும் தொடங்கு",
+                     callback_data: 'start'
+                   }
+                 ]]
+               }
+             });
+           } else {
+             await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+               reply_markup: {
+                 inline_keyboard: [
+                   [{
+                     text: "மீண்டும் தொடங்கு",
+                     callback_data: 'start'
+                   }
+                 ]]
+               }
+             });
+           }
+           }
+
+  //writer or jornalist
+
+  const writerFn = async (ctx) => {
+    // isHandLoomWeavers = ctx.update.callback_query.data === 'handloom';
+    isWriter = true; 
+    isJournalist = true
+      const schemes = data.filter((item) => {
+        if ((item.isWriter ===  isWriter) ||(item.isJournalist ===  isJournalist) ) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      if (schemes.length) {
+       const messagesArray = [];
+       let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+       firstMessage += '===============================\n\n';
+       messagesArray.push(firstMessage);
+       let message = '';
+       schemes.forEach((scheme, index) => {
+         let benefits = '';
+         let education = '';
+         let description = '';
+         let url = '';
+         let religion = '';
+         let maxIncome = '';
+         scheme.benefits?.forEach((benefit) => {
+           benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+         });
+
+         let eligibility = '';
+         if (scheme.eligibility) {
+           eligibility = '<b>இதர தகுதி</b>:\n';
+           scheme.eligibility?.forEach((elig) => {
+             eligibility += `<b>*</b> ${elig.value}\n`;
+           });
+         }
+
+         if (scheme.education) {
+           education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+         }
+
+         if (scheme.religion && scheme.religion.length) {
+           religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+         }
+
+         if (scheme.description) {
+           description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+         }
+
+         if (scheme.maxIncome) {
+           maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+         }
+
+         if (scheme.url) {
+           url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+         }
+         let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+         currentMessage += '===============================\n\n';
+
+         if ((message+currentMessage).length >= 4096) {
+           messagesArray.push(message);
+           message = currentMessage;
+         } else {
+           message += currentMessage;
+         }
+       });
+       messagesArray.push(message);
+
+       for (let mess of messagesArray) {
+         await ctx.replyWithHTML(mess);
+       }
+       await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+         reply_markup: {
+           inline_keyboard: [
+             [{
+               text: "மீண்டும் தொடங்கு",
+               callback_data: 'start'
+             }
+           ]]
+         }
+       });
+     } else {
+       await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+         reply_markup: {
+           inline_keyboard: [
+             [{
+               text: "மீண்டும் தொடங்கு",
+               callback_data: 'start'
+             }
+           ]]
+         }
+       });
+     }
+     }
 // Creating gender
 
     const catogeryFn = (ctx) => {
@@ -183,7 +728,6 @@ module.exports = async (req, res) => {
       isSchoolStudent = ctx.update.callback_query.data === 'schoolStudent';
       isCollegeStudent = ctx.update.callback_query.data === 'collegeStudent';
       isStudent = isSchoolStudent || isCollegeStudent;
-      if (isStudent || isEnterpreneur || isNoneOfTheAbove ) {
         bot.telegram.sendMessage(ctx.chat.id, '[5/6] பயனாளியின் வயது என்ன?', {
           reply_markup: {
             inline_keyboard: [
@@ -215,9 +759,8 @@ module.exports = async (req, res) => {
             ]
           }
         });
-      } else {
         await sendFinalResultFn(ctx);
-      }
+      
     };
 
 // Creating Income
@@ -264,7 +807,6 @@ module.exports = async (req, res) => {
 
     const farmerFn = async (ctx) => {
       isFarmer = true;
-
       bot.telegram.sendMessage(ctx.chat.id, '[2/2] பயனாளியின் தேவை என்ன?', {
         reply_markup: {
           inline_keyboard: [
@@ -383,6 +925,141 @@ module.exports = async (req, res) => {
         });
       }
     }
+
+
+    // enterpreneur
+
+      // Creating enterpreneur requirements 
+
+      const enterpreneurFn = async (ctx) => {
+        isEnterpreneur = true;
+        bot.telegram.sendMessage(ctx.chat.id, '[2/2] பயனாளியின் தேவை / வகை என்ன?', {
+          reply_markup: {
+            inline_keyboard: [
+              [{
+                text: "புதிதாக தொழில் தொடங்குவோர்",
+                callback_data: "new"
+              }], [{
+                text: "<1 வருடமாக இயங்கி வருவது",
+                callback_data: "one"
+              }], [{
+                text: "<2 வருடமாக இயங்கி வருவது",
+                callback_data: "two"
+              }], [{
+                text: "<3 வருடமாக இயங்கி வருவது",
+                callback_data: "three"
+              }],  [{
+                text: "<5 வருடமாக இயங்கி வருவது",
+                callback_data: "five"
+              }],
+              [{
+                text: "ஒப்பந்ததாரர்கள்(contractors)",
+                callback_data: "contractors"
+              }],
+              [{
+                text: "தொழில்சார் பயிற்சி",
+                callback_data: "training"
+              }]
+
+            ]
+          }
+        });
+      };
+  
+     // emterpreneur filter 
+  
+     const enterpreneurOptnFn = async (ctx) => {
+      let  yearLimit =  ctx.update.callback_query.data;
+       const schemes = data.filter((item) => {
+         if (item.isEnterpreneur === true && item.yearLimit.includes(yearLimit)) {
+           return true;
+         } else {
+           return false;
+         }
+       });
+  
+        if (schemes.length) {
+          const messagesArray = [];
+          let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+          firstMessage += '===============================\n\n';
+          messagesArray.push(firstMessage);
+          let message = '';
+          schemes.forEach((scheme, index) => {
+            let benefits = '';
+            let education = '';
+            let description = '';
+            let url = '';
+            let religion = '';
+            let maxIncome = '';
+            scheme.benefits?.forEach((benefit) => {
+              benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+            });
+  
+            let eligibility = '';
+            if (scheme.eligibility) {
+              eligibility = '<b>இதர தகுதி</b>:\n';
+              scheme.eligibility?.forEach((elig) => {
+                eligibility += `<b>*</b> ${elig.value}\n`;
+              });
+            }
+  
+            if (scheme.education) {
+              education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+            }
+  
+            if (scheme.religion && scheme.religion.length) {
+              religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+            }
+  
+            if (scheme.description) {
+              description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+            }
+  
+            if (scheme.maxIncome) {
+              maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+            }
+  
+            if (scheme.url) {
+              url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+            }
+            let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+            currentMessage += '===============================\n\n';
+  
+            if ((message+currentMessage).length >= 4096) {
+              messagesArray.push(message);
+              message = currentMessage;
+            } else {
+              message += currentMessage;
+            }
+          });
+          messagesArray.push(message);
+  
+          for (let mess of messagesArray) {
+            await ctx.replyWithHTML(mess);
+          }
+          await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+            reply_markup: {
+              inline_keyboard: [
+                [{
+                  text: "மீண்டும் தொடங்கு",
+                  callback_data: 'start'
+                }
+              ]]
+            }
+          });
+        } else {
+          await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+            reply_markup: {
+              inline_keyboard: [
+                [{
+                  text: "மீண்டும் தொடங்கு",
+                  callback_data: 'start'
+                }
+              ]]
+            }
+          });
+        }
+      }
 
 // women category information    
 
@@ -550,11 +1227,14 @@ const womenOptionsFn = async (ctx) => {
           if (scheme.maxIncome) {
             maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
           }
+          if (scheme.requiredDocuments) {
+            requiredDocuments = `<b>தேவையான் ஆவணங்கள்</b>: ரூ${scheme.requiredDocuments}\n`;
+          }
 
           if (scheme.url) {
             url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
           }
-          let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+          let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}${scheme.requiredDocuments}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
           currentMessage += '===============================\n\n';
 
           if ((message+currentMessage).length >= 4096) {
@@ -592,6 +1272,99 @@ const womenOptionsFn = async (ctx) => {
         });
       }
     }
+// senior citizen
+    const seniorCitizenFn = async (ctx) => {
+      isSeniorCitizen = true;
+       const schemes = data.filter((item) => {
+         if (item.isSeniorCitizen=== true) {
+           return true;
+         } else {
+           return false;
+         }
+       });
+ 
+       if (schemes.length) {
+         const messagesArray = [];
+         let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+         firstMessage += '===============================\n\n';
+         messagesArray.push(firstMessage);
+         let message = '';
+         schemes.forEach((scheme, index) => {
+           let benefits = '';
+           let education = '';
+           let description = '';
+           let url = '';
+           let religion = '';
+           let maxIncome = '';
+           scheme.benefits?.forEach((benefit) => {
+             benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+           });
+ 
+           let eligibility = '';
+           if (scheme.eligibility) {
+             eligibility = '<b>இதர தகுதி</b>:\n';
+             scheme.eligibility?.forEach((elig) => {
+               eligibility += `<b>*</b> ${elig.value}\n`;
+             });
+           }
+ 
+           if (scheme.education) {
+             education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+           }
+ 
+           if (scheme.religion && scheme.religion.length) {
+             religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+           }
+ 
+           if (scheme.description) {
+             description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+           }
+ 
+           if (scheme.maxIncome) {
+             maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+           }
+ 
+           if (scheme.url) {
+             url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+           }
+           let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+           currentMessage += '===============================\n\n';
+ 
+           if ((message+currentMessage).length >= 4096) {
+             messagesArray.push(message);
+             message = currentMessage;
+           } else {
+             message += currentMessage;
+           }
+         });
+         messagesArray.push(message);
+ 
+         for (let mess of messagesArray) {
+           await ctx.replyWithHTML(mess);
+         }
+         await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+           reply_markup: {
+             inline_keyboard: [
+               [{
+                 text: "மீண்டும் தொடங்கு",
+                 callback_data: 'start'
+               }
+             ]]
+           }
+         });
+       } else {
+         await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+           reply_markup: {
+             inline_keyboard: [
+               [{
+                 text: "மீண்டும் தொடங்கு",
+                 callback_data: 'start'
+               }
+             ]]
+           }
+         });
+       }
+     }
 
     const incomeFn = async (ctx) => {
       income = ctx.update.callback_query.data;
@@ -774,6 +1547,21 @@ const womenOptionsFn = async (ctx) => {
     bot.action('IndividualLoan', womenOptionsFn);
 
 
+    //enterpreneur
+
+    bot.action('Entrepreneur', enterpreneurFn);
+    bot.action('new', enterpreneurOptnFn);
+    bot.action('one', enterpreneurOptnFn);
+    bot.action('two', enterpreneurOptnFn);
+    bot.action('three', enterpreneurOptnFn);
+    bot.action('five', enterpreneurOptnFn);
+    bot.action('contractors', enterpreneurOptnFn);
+    bot.action('training', enterpreneurOptnFn);
+   
+//senior
+
+bot.action('SeniorCitizen', seniorCitizenFn);
+
 //student
     bot.action('student', catogeryFn);
 
@@ -789,6 +1577,33 @@ const womenOptionsFn = async (ctx) => {
     bot.action('schoolStudent', studentFn);
     bot.action('collegeStudent', studentFn);
     bot.action('non-student', studentFn);
+//writer
+bot.action( 'writer', writerFn);
+//isNoneOfTheAbove
+
+bot.action('NoneOfTheAbove', noneOfTheAboveFn);
+bot.action('fisherman', fisherManFn);
+bot.action('accidentclaim', accidentClaimFn);
+bot.action('deathclaim', deathClaimFn);
+bot.action('handloom', handLoomFn);
+
+
+//fisheopton
+
+bot.action('fisher', fisherOptionFn);
+bot.action('fishy', fisherOptionFn);
+bot.action('fishy_pond', fisherOptionFn);
+bot.action('schoolstudent', fisherOptionFn);
+bot.action('collegestudent', fisherOptionFn);
+bot.action('marriage', fisherOptionFn);
+bot.action('death', fisherOptionFn);
+bot.action('delivery', fisherOptionFn);
+//bot.action('SC', fisherOptionFn);
+//bot.action('ST', fisherOptionFn);
+
+
+bot.action('contractors', enterpreneurOptnFn);
+bot.action('training', enterpreneurOptnFn);
 
     ["30", "40", "50", "60", "70", "80", "90", "100"].forEach((inc) => {
       bot.action(inc, ageFn);
