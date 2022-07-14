@@ -69,24 +69,24 @@ module.exports = async (req, res) => {
     let isSchoolStudent = false;
     let isCollegeStudent = false;
     let isFarmer = false;
-    let isWomen= false;
-    let isDivorced= false;
-    let isMarried= false;
-    let isSeparated= false;
-    let isSingle= false ; 
-    let isMiscarriage= false;
-    let isWidow= false;
-    let isMaternity= false;
-    let isMarriageAssit= false;
-    let isMedical= false;
+    let isWomen = false;
+    // let isDivorced= false;
+    // let isMarried= false;
+    // let isSeparated= false;
+    // let isSingle= false ; 
+    // let isMiscarriage= false;
+    // let isWidow= false;
+    // let isMaternity= false;
+    // let isMarriageAssit= false;
+    // let isMedical= false;
     let isJournalist= false;      
     let isHandLoomWeavers= false;
     let isFisher= false;
     let isEnterpreneur= false;  
     let isWriter= false;
     let isSeniorCitizen= false;
-    let isIndividualLoan= false;
-    let isAccident= false;
+    // let isIndividualLoan= false;
+    // let isAccident= false;
     let isDeath= false;
     let isNonDeath= false;
     let isDifferntlyAbled=  false;
@@ -109,7 +109,7 @@ module.exports = async (req, res) => {
     const noneOfTheAboveFn = (ctx) => {
       console.log(ctx.from);
       isNoneOfTheAbove = true;
-      ctx.replyWithHTML(`வணக்கம் ${ctx.from.first_name}! நலன் இயலிக்கு உங்களை வரவேற்கிறோம். மக்களுக்காக அரசு இயற்றும் திட்டங்களை எளிய முறையில் மக்களுக்கு கொண்டு செல்வதே இந்த இயலியின் நோக்கம். சில எளிய கேள்விகளுக்குப் பதிலளிப்பதன் மூலம் அரசு உங்களுக்கு எவ்வாறு உதவும் எனத் தெரிந்து கொள்ளலாம்.\n\n [1/6] பயனாளியின் வகையைத் தேர்வு செய்யவும்`, {
+      bot.telegram.sendMessage(ctx.chat.id, '[1/6] பயனாளியின் வகையைத் தேர்வு செய்யவும்?', {
         reply_markup: {
           inline_keyboard: [
             [{
@@ -1370,6 +1370,8 @@ const womenOptionsFn = async (ctx) => {
       income = ctx.update.callback_query.data;
       await sendFinalResultFn(ctx);
     };
+
+
 
     const sendFinalResultFn = async (ctx) => {
       console.log('user input', gender, community, isSchoolStudent, isCollegeStudent, age, income);
