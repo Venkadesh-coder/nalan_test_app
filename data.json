@@ -8702,9 +8702,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
-
+  "isEnterpreneur": true
 },
 {
   "url": "www.kviconline.gov.in\/pmegp",
@@ -8733,8 +8731,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": "www.msmeonline.tn.gov.in\/needs",
@@ -8763,8 +8760,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": "msmeonline.tn.gov.in\/incentives\/index.php",
@@ -8795,8 +8791,7 @@
     "value": "Application received within one year from the Date of Commencement of Production"
   }],
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["one"]
+  "isEnterpreneur": true
 },
 {
   "url": "msmeonline.tn.gov.in\/incentives\/index.php",
@@ -8827,8 +8822,7 @@
     "value": "Application received within 3 months from the Date of Commencement of Production"
   }],
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["one"]
+  "isEnterpreneur": true
 },
 {
   "url": "msmeonline.tn.gov.in\/incentives\/index.php",
@@ -8859,8 +8853,7 @@
     "value": "Application received within one year from the Date of  Quality Certification"
   }],
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["one"]
+  "isEnterpreneur": true
 },
 {
   "url": "msmeonline.tn.gov.in\/incentives\/index.php",
@@ -8891,8 +8884,7 @@
     "value": "Application received within one year from the Date of  Completion of energy audit"
   }],
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["one"]
+  "isEnterpreneur": true
 },
 {
   "url": null,
@@ -8923,8 +8915,7 @@
     "value": "Duration Based on Trade of Training"
   }],
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["training"]
+  "isEnterpreneur": true
 },
 {
   "url": "http://nadp.gov.in",
@@ -8953,9 +8944,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy"]
-  
+  "isFisher": true
 },
 {
   "url": "http://nadp.gov.in",
@@ -8984,8 +8973,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fisher"]
+  "isFisher": true
 },
 {
   "url": "http://nadp.gov.in",
@@ -9014,8 +9002,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fisher"]
+  "isFisher": true
 },
 {
   "url": "http://nadp.gov.in",
@@ -9044,8 +9031,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy"]
+  "isFisher": true
 },
 {
   "url": "http://pmmsy.dof.gov.in",
@@ -9074,8 +9060,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy_pond"]
+  "isFisher": true
 },
 {
   "url": "http://pmmsy.dof.gov.in",
@@ -9104,8 +9089,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy_pond"]
+  "isFisher": true
 },
 {
   "url": "http://pmmsy.dof.gov.in",
@@ -9134,8 +9118,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy_pond"] 
+  "isFisher": true
 },
 {
   "url": "http://pmmsy.dof.gov.in",
@@ -9164,8 +9147,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fisher"]
+  "isFisher": true
 },
 {
   "url": "http://nfdb.gov.in",
@@ -9194,8 +9176,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy_pond"]
+  "isFisher": true
 },
 {
   "url": "http://nfdb.gov.in",
@@ -9224,8 +9205,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy_pond"]
+  "isFisher": true
 },
 {
   "url": "http://nfdb.gov.in",
@@ -9254,8 +9234,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy_pond"]
+  "isFisher": true
 },
 {
   "url": "http://www.iamwarm.gov.in",
@@ -9284,8 +9263,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy_pond"]
+  "isFisher": true
 },
 {
   "url": "http://www.iamwarm.gov.in",
@@ -9314,8 +9292,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy"]
+  "isFisher": true
 },
 {
   "url": "http://www.iamwarm.gov.in",
@@ -9344,8 +9321,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy"]
+  "isFisher": true
 },
 {
   "url": "http://www.iamwarm.gov.in",
@@ -9374,8 +9350,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy"]
+  "isFisher": true
 },
 {
   "url": "http://www.iamwarm.gov.in",
@@ -9404,8 +9379,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy"]
+  "isFisher": true
 },
 {
   "url": "http://www.iamwarm.gov.in",
@@ -9434,8 +9408,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fishy"] 
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9464,8 +9437,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fisher"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9494,8 +9466,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["fisher"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9525,7 +9496,6 @@
   "eligibility": null,
   "religion": null,
   "isFisher": true
- 
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9554,8 +9524,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["death"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9584,8 +9553,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["delivery"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9614,8 +9582,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["delivery"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9627,7 +9594,7 @@
   }],
   "minAge": 18,
   "maxAge": 65,
-  "gender": null,
+  "gender": ["female"],
   "community": null,
   "isStudent": false,
   "isSchoolStudent": false,
@@ -9644,8 +9611,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["marriage"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9674,8 +9640,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["marriage"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9704,8 +9669,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["death"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9734,8 +9698,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["death"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9764,8 +9727,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["death"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9794,8 +9756,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["death"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9824,8 +9785,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["schoolstudent"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9854,8 +9814,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["schoolstudent"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9884,8 +9843,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["collegestudent"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9914,8 +9872,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["collegestudent"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9944,8 +9901,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["collegestudent"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -9964,7 +9920,7 @@
   "isCollegeStudent": true,
   "maritalStatus": null,
   "minIncome": null,
-  "education": "Professional Courses (Law, Engineering, Medicine etc.)(per year)",
+  "education": "  Professional Courses (Law, Engineering, Medicine etc.)(per year)",
   "location": null,
   "maxIncome": null,
   "parentsOccupation": null,
@@ -9974,8 +9930,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["collegestudent"]
+  "isFisher": true
 },
 {
   "url": "https://www.Fisheries.tn.gov.in",
@@ -10004,8 +9959,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isFisher": true,
-  "fisherType":["collegestudent"]
+  "isFisher": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10034,8 +9988,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10064,8 +10017,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10094,8 +10046,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["five"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10124,8 +10075,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["three"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10154,8 +10104,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["five"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10184,8 +10133,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["two"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10214,8 +10162,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10244,8 +10191,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["one"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10274,8 +10220,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": null,
@@ -10304,8 +10249,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": null,
@@ -10334,8 +10278,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": null,
@@ -10364,8 +10307,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "url": null,
@@ -10394,8 +10336,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new", "exist"]
+  "isEnterpreneur": true
 },
 {
   "url": "https://www.tiic.org/tiic-scheme/",
@@ -10424,8 +10365,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["contractors"]
+  "isEnterpreneur": true
 },
 {
   "url": null,
@@ -10454,8 +10394,7 @@
   "health": null,
   "eligibility": null,
   "religion": null,
-  "isEnterpreneur": true,
-  "yearLimit":["new"]
+  "isEnterpreneur": true
 },
 {
   "name": "பெண் கல்வி  ஊக்குவிப்புத் தொகை",
@@ -11056,7 +10995,6 @@
   }],
   "isWomen": true,
   "isEnterpreneur": true,
-  "yearLimit":["new"],
   "isIndividualLoan": true,
   "womenType": ["IndividualLoan", "SelfEmployment"]
 },
@@ -11124,7 +11062,6 @@
   ],
   "isWomen": true,
   "isEnterpreneur": true,
-  "yearLimit":["new"],
   "isIndividualLoan": true,
   "womenType": ["IndividualLoan", "SelfEmployment"]
 
@@ -11158,9 +11095,7 @@
       "amount": "13%"
     }
   ],
-  "isEnterpreneur": true,
-  "yearLimit":["new"],
-  "womenType":["SelfEmployment"]
+  "isEnterpreneur": true
 },
 {
   "name": "விவசாயிகள் நலன் குழு (FIG)",
