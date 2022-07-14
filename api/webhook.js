@@ -70,9 +70,14 @@ module.exports = async (req, res) => {
     let isStudent = false;
     let isSchoolStudent = false;
     let isCollegeStudent = false;
+    let isFarmer = false;
+    let isDifferentlyAbled = false;
+    let isEntrepreneur = false;
+    let isWomen = false;
+    let isSeniorCitizen = false;
+    let isNoneOfTheAbove = false;
     let income = null;
     let age = null;
-    
 
 // greeting
 
@@ -110,7 +115,7 @@ module.exports = async (req, res) => {
     const genderFn = (ctx) => {
       gender = ctx.update.callback_query.data;
       let greet = greetingGender[gender] || ''
-      bot.telegram.sendMessage(ctx.chat.id, `[3sss/6] நன்றி ${greet}! பயனாளி எந்த சமூகத்தைச் சேர்ந்தவர்? பின்வரும் ஒன்றைத் தேர்ந்தெடுக்கவும்.`, {
+      bot.telegram.sendMessage(ctx.chat.id, `[3/6] நன்றி ${greet}! பயனாளி எந்த சமூகத்தைச் சேர்ந்தவர்? பின்வரும் ஒன்றைத் தேர்ந்தெடுக்கவும்.`, {
         reply_markup: {
           inline_keyboard: [
             [{
