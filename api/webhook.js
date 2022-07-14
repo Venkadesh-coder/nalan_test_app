@@ -135,7 +135,7 @@ module.exports = async (req, res) => {
       });
     };
 
-//fisher
+//fisher information
     const fisherManFn = async (ctx) => {
       let  isFisher = true
       bot.telegram.sendMessage(ctx.chat.id, '[2/2] பயனாளியின் தேவை / வகை என்ன?', {
