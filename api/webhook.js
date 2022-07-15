@@ -88,7 +88,7 @@ try{
 
   const noneOfTheAboveFn = (ctx) => {
     console.log(ctx.from);
-    isNoneOfTheAbove = true;
+     isNoneOfTheAbove = true;
     bot.telegram.sendMessage(ctx.chat.id, '[1/6] பயனாளியின் வகையைத் தேர்வு செய்யவும்?', {
       reply_markup: {
         inline_keyboard: [
@@ -652,7 +652,7 @@ const writerFn = async (ctx) => {
 // Creating gender
 
   const categoryFn = (ctx) => {
-   category = ctx.update.callback_query.data;
+     category = ctx.update.callback_query.data;
     ctx.replyWithHTML(`\n\n [2/6] பயனாளியின் பாலினத்தை தேர்வு செய்யவும்`, {
       reply_markup: {
         inline_keyboard: [
