@@ -111,6 +111,7 @@ const CategoryFn = (ctx) => {
 // Creating Community
 
 const genderFn = (ctx) => {
+  console.log(ctx.from);
   gender = ctx.update.callback_query.data;
   let greet = greetingGender[gender] || ''
   bot.telegram.sendMessage(ctx.chat.id, `[3/6] நன்றி ${greet}! பயனாளி எந்த சமூகத்தைச் சேர்ந்தவர்? பின்வரும் ஒன்றைத் தேர்ந்தெடுக்கவும்.`, {
@@ -143,6 +144,7 @@ const genderFn = (ctx) => {
 // Creating Education status
 
 const communityFn = (ctx) => {
+  console.log(ctx.from);
   community = ctx.update.callback_query.data;
   bot.telegram.sendMessage(ctx.chat.id, '[4/6] பின்வருவனற்றுள் எது பயனாளியைக் குறிக்கும்?', {
     reply_markup: {
@@ -162,6 +164,7 @@ const communityFn = (ctx) => {
 // Creating Age 
 
 const studentFn = async (ctx) => {
+  console.log(ctx.from);
   isSchoolStudent = ctx.update.callback_query.data === 'schoolStudent';
   isCollegeStudent = ctx.update.callback_query.data === 'collegeStudent';
   isStudent = isSchoolStudent || isCollegeStudent;
@@ -203,6 +206,7 @@ const studentFn = async (ctx) => {
 // Creating Income
 
 const ageFn = (ctx) => {
+  console.log(ctx.from);
   age = ctx.update.callback_query.data;
   bot.telegram.sendMessage(ctx.chat.id, '[6/6] உங்கள் குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம் என்ன என்ன?', {
     reply_markup: {
@@ -241,6 +245,7 @@ const ageFn = (ctx) => {
 };
 // final
 const incomeFn = async (ctx) => {
+  console.log(ctx.from);
   income = ctx.update.callback_query.data;
   await sendFinalResultFn(ctx);
 };
@@ -250,6 +255,7 @@ const incomeFn = async (ctx) => {
 // Creating farmer requirements 
 
 const farmerFn = async (ctx) => {
+  console.log(ctx.from);
   isFarmer = true;
   bot.telegram.sendMessage(ctx.chat.id, '[2/2] விவசாயியின் தேவை என்ன?', {
     reply_markup: {
@@ -278,9 +284,11 @@ const farmerFn = async (ctx) => {
 // farmer filter 
 
 const farmerOptionsFn = async (ctx) => {
+  console.log(ctx.from);
   isFarmer = true;
   let farmerNeeds =  ctx.update.callback_query.data;
   const schemes = data.filter((item) => {
+    console.log('schemes is ', schemes);
     if (item.isFarmer === isFarmer && item.farmerNeeds.includes(farmerNeeds)) {
       return true;
     } else {
@@ -377,6 +385,7 @@ const farmerOptionsFn = async (ctx) => {
 // disability category information
 
 const differentlyAbledFn = async (ctx) => {
+  console.log(ctx.from);
   isDifferntlyAbled = true;
   bot.telegram.sendMessage(ctx.chat.id, '[2/2] மாற்றுத் திறனாளித் தன்மையைத் தேர்வு செய்க?', {
     reply_markup: {
@@ -425,9 +434,11 @@ const differentlyAbledFn = async (ctx) => {
 // disability filter 
 
 const disabilitytypeFn = async (ctx) => {
+  console.log(ctx.from);
   isDifferntlyAbled = true;
   let categoryOfDisability = ctx.update.callback_query.data;
   const schemes = data.filter((item) => {
+    console.log('schemes is ', schemes);
     if (item.isDifferntlyAbled === isDifferntlyAbled && item.categoryOfDisability.includes(categoryOfDisability)) {
       return true;
     } else {
@@ -527,6 +538,7 @@ const disabilitytypeFn = async (ctx) => {
   // Creating enterpreneur requirements 
 
   const enterpreneurFn = async (ctx) => {
+  console.log(ctx.from);
   isEnterpreneur = true;
     bot.telegram.sendMessage(ctx.chat.id, '[2/2] தொழில்முனைவோர் பிரிவில் பயனாளியின் தேவை / வகை என்ன?', {
       reply_markup: {
@@ -564,9 +576,11 @@ const disabilitytypeFn = async (ctx) => {
   // emterpreneur filter 
 
   const enterpreneurOptnFn = async (ctx) => {
+  console.log(ctx.from);
   isEnterpreneur = true;
   let yearLimit =  ctx.update.callback_query.data;
     const schemes = data.filter((item) => {
+      console.log('schemes is ', schemes);
       if (item.isEnterpreneur === isEnterpreneur && item.yearLimit.includes(yearLimit)) {
         return true;
       } else {
@@ -664,6 +678,7 @@ const disabilitytypeFn = async (ctx) => {
 // women category information    
 
 const womenFn = async (ctx) => {
+  console.log(ctx.from);
 isWomen = true;
 bot.telegram.sendMessage(ctx.chat.id, '[2/2] மகளிர் பிரிவில் பயனாளியின் தேவை / வகை என்ன?', {
 reply_markup: {
@@ -714,9 +729,11 @@ reply_markup: {
 // women filter
 
 const womenOptionsFn = async (ctx) => {
+console.log(ctx.from); 
 let womenType = ctx.update.callback_query.data;
 isWomen = true;
 const schemes = data.filter((item) => {
+  console.log('schemes is ', schemes);
 if (item.isWomen === isWomen && item.womenType.includes(womenType)) {
   return true;
 } else {
@@ -812,10 +829,11 @@ if (schemes.length) {
 
 // senior citizen
 const seniorCitizenFn = async (ctx) => {
+  console.log(ctx.from);
   isSeniorCitizen = true;
     const schemes = data.filter((item) => {
     console.log('schemes is ', schemes);
-      if (item.isSeniorCitizen=== isSeniorCitizen ) {
+      if (item.isSeniorCitizen === isSeniorCitizen ) {
         return true;
       } else {
         return false;
@@ -838,7 +856,7 @@ const seniorCitizenFn = async (ctx) => {
         scheme.benefits?.forEach((benefit) => {
           benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
         });
-
+    
         let eligibility = '';
         if (scheme.eligibility) {
           eligibility = '<b>இதர தகுதி</b>:\n';
@@ -846,32 +864,32 @@ const seniorCitizenFn = async (ctx) => {
             eligibility += `<b>*</b> ${elig.value}\n`;
           });
         }
-
+    
         if (scheme.education) {
           education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
         }
-
+    
         if (scheme.religion && scheme.religion.length) {
           religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
         }
-
+    
         if (scheme.description) {
           description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
         }
-
+    
         if (scheme.maxIncome) {
           maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
         }
         if (scheme.requiredDocuments) {
           requiredDocuments = `<b>தேவையான் ஆவணங்கள்</b>: ரூ${scheme.requiredDocuments}\n`;
         }
-
+    
         if (scheme.url) {
           url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
         }
         let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}${requiredDocuments}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
         currentMessage += '===============================\n\n';
-
+    
         if ((message+currentMessage).length >= 4096) {
           messagesArray.push(message);
           message = currentMessage;
@@ -880,7 +898,7 @@ const seniorCitizenFn = async (ctx) => {
         }
       });
       messagesArray.push(message);
-
+    
       for (let mess of messagesArray) {
         await ctx.replyWithHTML(mess);
       }
@@ -938,6 +956,7 @@ const seniorCitizenFn = async (ctx) => {
   };
   //fisher man
   const fisherManFn = async (ctx) => {
+    console.log(ctx.from);
     isNoneOfTheAbove = true;
     isFisher=true;
     bot.telegram.sendMessage(ctx.chat.id, '[3/3]மீனவர் பிரிவில் பயனாளியின் தேவை / வகை என்ன?', {
@@ -976,10 +995,12 @@ const seniorCitizenFn = async (ctx) => {
     });
     }
     const fisherOptionFn = async (ctx) => {
+      console.log(ctx.from);
       // isNoneOfTheAbove = true;
       isFisher = true;
       let fisherType = ctx.update.callback_query.data;
         const schemes = data.filter((item) => {
+          console.log('schemes is ', schemes);
           if (item.isFisher === isFisher && item.fisherType.includes(fisherType)) {
             return true;
           } else {
@@ -1074,9 +1095,11 @@ const seniorCitizenFn = async (ctx) => {
     }
   //handloom
       const handLoomFn = async (ctx) => {
+        console.log(ctx.from);
         isNoneOfTheAbove = true;
         isHandLoomWeavers=true;
           const schemes = data.filter((item) => {
+            console.log('schemes is ', schemes);
             if (item.isHandLoomWeavers ===  isHandLoomWeavers) {
               return true;
             } else {
@@ -1171,9 +1194,11 @@ const seniorCitizenFn = async (ctx) => {
     }
   //accident claim
   const accidentClaimFn = async (ctx) => {
+          console.log(ctx.from);
           isNoneOfTheAbove = true;
           isNonDeath=true;
             const schemes = data.filter((item) => {
+              console.log('schemes is ', schemes);
               if (item.isNonDeath ===  isNonDeath) {
                 return true;
               } else {
@@ -1268,9 +1293,11 @@ const seniorCitizenFn = async (ctx) => {
     }
       // deathclaim
   const deathClaimFn = async (ctx) => {
+    console.log(ctx.from);
         isNoneOfTheAbove = true;
         isDeath=true;
           const schemes = data.filter((item) => {
+            console.log('schemes is ', schemes);
             if (item.isDeath ===  isDeath) {
               return true;
             } else {
@@ -1365,10 +1392,12 @@ const seniorCitizenFn = async (ctx) => {
     }
   //writer or jornalist
   const writerFn = async (ctx) => {
+  console.log(ctx.from);
   isNoneOfTheAbove = true;
   isWriter = true; 
   isJournalist = true
     const schemes = data.filter((item) => {
+      console.log('schemes is ', schemes);
       if ((item.isWriter ===  isWriter) ||(item.isJournalist ===  isJournalist) ) {
         return true;
       } else {
@@ -1463,8 +1492,10 @@ const seniorCitizenFn = async (ctx) => {
     }
 
 const sendFinalResultFn = async (ctx) => {
+  console.log(ctx.from);
   console.log('user input', gender, community, isSchoolStudent, isCollegeStudent, age, income);
   const schemes = data.filter((item) => {
+    console.log('schemes is ', schemes);
     if (isStudent) {
       if (isSchoolStudent) {
         if (
