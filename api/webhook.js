@@ -61,7 +61,7 @@ try{
   console.log('request received', req.body);
   let gender;
   let community;
-  let category;
+ // let categoryStudent;
   let isStudent = false;
   let isSchoolStudent = false;
   let isCollegeStudent = false;
@@ -88,7 +88,7 @@ try{
 
   const noneOfTheAboveFn = (ctx) => {
     console.log(ctx.from);
-     isNoneOfTheAbove = true;
+    isNoneOfTheAbove = true;
     bot.telegram.sendMessage(ctx.chat.id, '[1/6] பயனாளியின் வகையைத் தேர்வு செய்யவும்?', {
       reply_markup: {
         inline_keyboard: [
@@ -156,8 +156,9 @@ try{
     }
 
     const fisherOptionFn = async (ctx) => {
+      isNoneOfTheAbove = true;
       isFisher = true;
-      let fisherType =  ctx.update.callback_query.data;
+      let fisherType = ctx.update.callback_query.data;
         const schemes = data.filter((item) => {
           if (item.isFisher === isFisher && item.fisherType.includes(fisherType)) {
             return true;
@@ -352,9 +353,9 @@ try{
           }
         }
 
-  
+  //accident claim
 
-        const accidentClaimFn = async (ctx) => {
+const accidentClaimFn = async (ctx) => {
           isNoneOfTheAbove = true;
           isNonDeath=true;
             const schemes = data.filter((item) => {
@@ -453,7 +454,7 @@ try{
 
       // deathclaim
 
-      const deathClaimFn = async (ctx) => {
+const deathClaimFn = async (ctx) => {
         isNoneOfTheAbove = true;
         isDeath=true;
           const schemes = data.filter((item) => {
@@ -651,8 +652,8 @@ const writerFn = async (ctx) => {
     }
 // Creating gender
 
-  const categoryFn = (ctx) => {
-     category = ctx.update.callback_query.data;
+  const CategoryFn = (ctx) => {
+  // categoryStudent = ctx.update.callback_query.data;
     ctx.replyWithHTML(`\n\n [2/6] பயனாளியின் பாலினத்தை தேர்வு செய்யவும்`, {
       reply_markup: {
         inline_keyboard: [
@@ -759,7 +760,7 @@ const writerFn = async (ctx) => {
           ]
         }
       });
-      await sendFinalResultFn(ctx);
+    //  await sendFinalResultFn(ctx);
     
   };
 
@@ -835,7 +836,7 @@ const writerFn = async (ctx) => {
 
   const farmerOptionsFn = async (ctx) => {
     isFarmer = true;
-  let farmerNeeds =  ctx.update.callback_query.data;
+    let farmerNeeds =  ctx.update.callback_query.data;
     const schemes = data.filter((item) => {
       if (item.isFarmer === isFarmer && item.farmerNeeds.includes(farmerNeeds)) {
         return true;
@@ -1665,7 +1666,7 @@ if (schemes.length) {
 bot.action('SeniorCitizen', seniorCitizenFn);
 
 //student
-  bot.action('student', categoryFn);
+  bot.action('student', CategoryFn);
 
 
 //Community   
