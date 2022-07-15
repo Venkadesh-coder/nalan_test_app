@@ -247,7 +247,134 @@ const ageFn = (ctx) => {
 const incomeFn = async (ctx) => {
   console.log(ctx.from);
   income = ctx.update.callback_query.data;
-  await sendFinalResultFn(ctx);
+  const schemes = data.filter((item) => {
+    console.log('schemes is ', schemes);
+    if (isStudent) {
+      if (isSchoolStudent) {
+        if (
+          (item.isSchoolStudent === isSchoolStudent) &&
+          (item.gender === null || item.gender?.includes(gender)) &&
+          (item.community === null || item.community?.includes(community)) &&
+          (item.minIncome === null || item.maxIncome === null || item.minIncome <= income || item.maxIncome >= income)
+          ) {
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        if (
+          (item.isCollegeStudent === isCollegeStudent) &&
+          (item.gender === null || item.gender?.includes(gender)) &&
+          (item.community === null || item.community?.includes(community)) &&
+          (item.minIncome === null || item.maxIncome === null || item.minIncome <= income || item.maxIncome >= income)
+          ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    if (
+      (item.isSchoolStudent === isSchoolStudent) &&
+      (item.isCollegeStudent === isCollegeStudent) &&
+      (item.gender === null || item.gender?.includes(gender)) &&
+      (item.community === null || item.community?.includes(community)) &&
+      ((item.minAge === null && item.maxAge === null) || (item.minAge?  item.minAge >= age : item.maxAge <= age)) &&
+      (item.maxIncome === null || item.maxIncome >= income)
+      ) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log('schemes is ', schemes);
+
+  if (schemes.length) {
+    const messagesArray = [];
+    let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+    firstMessage += '===============================\n\n';
+    messagesArray.push(firstMessage);
+    let message = '';
+    schemes.forEach((scheme, index) => {
+      let benefits = '';
+      let education = '';
+      let description = '';
+      let url = '';
+      let religion = '';
+      let maxIncome = '';
+      let requiredDocuments = '';
+      scheme.benefits?.forEach((benefit) => {
+        benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+      });
+
+      let eligibility = '';
+      if (scheme.eligibility) {
+        eligibility = '<b>இதர தகுதி</b>:\n';
+        scheme.eligibility?.forEach((elig) => {
+          eligibility += `<b>*</b> ${elig.value}\n`;
+        });
+      }
+
+      if (scheme.education) {
+        education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+      }
+
+      if (scheme.religion && scheme.religion.length) {
+        religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+      }
+
+      if (scheme.description) {
+        description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+      }
+
+      if (scheme.maxIncome) {
+        maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+      }
+      
+      if (scheme.requiredDocuments) {
+        requiredDocuments = `<b>தேவையான் ஆவணங்கள்</b>: ரூ${scheme.requiredDocuments}\n`;
+      }
+
+      if (scheme.url) {
+        url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+      }
+      let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}${requiredDocuments}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+      currentMessage += '===============================\n\n';
+
+      if ((message+currentMessage).length >= 4096) {
+        messagesArray.push(message);
+        message = currentMessage;
+      } else {
+        message += currentMessage;
+      }
+    });
+    messagesArray.push(message);
+
+    for (let mess of messagesArray) {
+      await ctx.replyWithHTML(mess);
+    }
+    await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+      reply_markup: {
+        inline_keyboard: [
+          [{
+            text: "மீண்டும் தொடங்கு",
+            callback_data: 'start'
+          }
+        ]]
+      }
+    });
+  } else {
+    await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+      reply_markup: {
+        inline_keyboard: [
+          [{
+            text: "மீண்டும் தொடங்கு",
+            callback_data: 'start'
+          }
+        ]]
+      }
+    });
+  }
 };
 
 //                      student function end                          //
@@ -1491,138 +1618,138 @@ const seniorCitizenFn = async (ctx) => {
   
     }
 
-const sendFinalResultFn = async (ctx) => {
-  console.log(ctx.from);
-  console.log('user input', gender, community, isSchoolStudent, isCollegeStudent, age, income);
-  const schemes = data.filter((item) => {
-    console.log('schemes is ', schemes);
-    if (isStudent) {
-      if (isSchoolStudent) {
-        if (
-          (item.isSchoolStudent === isSchoolStudent) &&
-          (item.gender === null || item.gender?.includes(gender)) &&
-          (item.community === null || item.community?.includes(community)) &&
-          (item.minIncome === null || item.maxIncome === null || item.minIncome <= income || item.maxIncome >= income)
-          ) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        if (
-          (item.isCollegeStudent === isCollegeStudent) &&
-          (item.gender === null || item.gender?.includes(gender)) &&
-          (item.community === null || item.community?.includes(community)) &&
-          (item.minIncome === null || item.maxIncome === null || item.minIncome <= income || item.maxIncome >= income)
-          ) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    }
-    if (
-      (item.isSchoolStudent === isSchoolStudent) &&
-      (item.isCollegeStudent === isCollegeStudent) &&
-      (item.gender === null || item.gender?.includes(gender)) &&
-      (item.community === null || item.community?.includes(community)) &&
-      ((item.minAge === null && item.maxAge === null) || (item.minAge?  item.minAge >= age : item.maxAge <= age)) &&
-      (item.maxIncome === null || item.maxIncome >= income)
-      ) {
-      return true;
-    } else {
-      return false;
-    }
-  });
-  console.log('schemes is ', schemes);
+// const sendFinalResultFn = async (ctx) => {
+//   console.log(ctx.from);
+//   console.log('user input', gender, community, isSchoolStudent, isCollegeStudent, age, income);
+//   const schemes = data.filter((item) => {
+//     console.log('schemes is ', schemes);
+//     if (isStudent) {
+//       if (isSchoolStudent) {
+//         if (
+//           (item.isSchoolStudent === isSchoolStudent) &&
+//           (item.gender === null || item.gender?.includes(gender)) &&
+//           (item.community === null || item.community?.includes(community)) &&
+//           (item.minIncome === null || item.maxIncome === null || item.minIncome <= income || item.maxIncome >= income)
+//           ) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       } else {
+//         if (
+//           (item.isCollegeStudent === isCollegeStudent) &&
+//           (item.gender === null || item.gender?.includes(gender)) &&
+//           (item.community === null || item.community?.includes(community)) &&
+//           (item.minIncome === null || item.maxIncome === null || item.minIncome <= income || item.maxIncome >= income)
+//           ) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       }
+//     }
+//     if (
+//       (item.isSchoolStudent === isSchoolStudent) &&
+//       (item.isCollegeStudent === isCollegeStudent) &&
+//       (item.gender === null || item.gender?.includes(gender)) &&
+//       (item.community === null || item.community?.includes(community)) &&
+//       ((item.minAge === null && item.maxAge === null) || (item.minAge?  item.minAge >= age : item.maxAge <= age)) &&
+//       (item.maxIncome === null || item.maxIncome >= income)
+//       ) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   });
+//   console.log('schemes is ', schemes);
 
-  if (schemes.length) {
-    const messagesArray = [];
-    let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
-    firstMessage += '===============================\n\n';
-    messagesArray.push(firstMessage);
-    let message = '';
-    schemes.forEach((scheme, index) => {
-      let benefits = '';
-      let education = '';
-      let description = '';
-      let url = '';
-      let religion = '';
-      let maxIncome = '';
-      let requiredDocuments = '';
-      scheme.benefits?.forEach((benefit) => {
-        benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
-      });
+//   if (schemes.length) {
+//     const messagesArray = [];
+//     let firstMessage = 'பதிலளித்தமைக்கு நன்றி.\n';
+//     firstMessage += '===============================\n\n';
+//     messagesArray.push(firstMessage);
+//     let message = '';
+//     schemes.forEach((scheme, index) => {
+//       let benefits = '';
+//       let education = '';
+//       let description = '';
+//       let url = '';
+//       let religion = '';
+//       let maxIncome = '';
+//       let requiredDocuments = '';
+//       scheme.benefits?.forEach((benefit) => {
+//         benefits += `<b>-</b> ${benefit.criteria? benefit.criteria: ''} ${benefit.amount || ''}\n`
+//       });
 
-      let eligibility = '';
-      if (scheme.eligibility) {
-        eligibility = '<b>இதர தகுதி</b>:\n';
-        scheme.eligibility?.forEach((elig) => {
-          eligibility += `<b>*</b> ${elig.value}\n`;
-        });
-      }
+//       let eligibility = '';
+//       if (scheme.eligibility) {
+//         eligibility = '<b>இதர தகுதி</b>:\n';
+//         scheme.eligibility?.forEach((elig) => {
+//           eligibility += `<b>*</b> ${elig.value}\n`;
+//         });
+//       }
 
-      if (scheme.education) {
-        education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
-      }
+//       if (scheme.education) {
+//         education = `<b>கல்வித் தகுதி</b>: ${scheme.education}\n`;
+//       }
 
-      if (scheme.religion && scheme.religion.length) {
-        religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
-      }
+//       if (scheme.religion && scheme.religion.length) {
+//         religion = `<b>பயனாளி பின்வரும் மதத்தைச் சார்ந்தவராக இருக்க வேண்டும்</b>: ${scheme.religion.map(i => i)}\n`;
+//       }
 
-      if (scheme.description) {
-        description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
-      }
+//       if (scheme.description) {
+//         description = `<b>திட்டக்குறிப்பு</b>: ${scheme.description}\n\n`;
+//       }
 
-      if (scheme.maxIncome) {
-        maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
-      }
+//       if (scheme.maxIncome) {
+//         maxIncome = `<b>பயனாளி குடும்பத்தின் அதிகபட்ச ஆண்டு வருமானம்</b>: ரூ${scheme.maxIncome}\n`;
+//       }
       
-      if (scheme.requiredDocuments) {
-        requiredDocuments = `<b>தேவையான் ஆவணங்கள்</b>: ரூ${scheme.requiredDocuments}\n`;
-      }
+//       if (scheme.requiredDocuments) {
+//         requiredDocuments = `<b>தேவையான் ஆவணங்கள்</b>: ரூ${scheme.requiredDocuments}\n`;
+//       }
 
-      if (scheme.url) {
-        url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
-      }
-      let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}${requiredDocuments}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
-      currentMessage += '===============================\n\n';
+//       if (scheme.url) {
+//         url = `மேலதிக விவரங்களுக்கு பின்வரும் தளத்தை அணுகவும்: ${scheme.url}\n`;
+//       }
+//       let currentMessage = `${index+1}) <b>திட்டத்தின் பெயர்</b>: ${scheme.name}\n<b>துறை</b>: ${scheme.department}\n\n${description}${education}${religion}${maxIncome}${eligibility}${requiredDocuments}\n<b>உதவித் தொகை</b>:\n ${benefits}\n${url}`;
+//       currentMessage += '===============================\n\n';
 
-      if ((message+currentMessage).length >= 4096) {
-        messagesArray.push(message);
-        message = currentMessage;
-      } else {
-        message += currentMessage;
-      }
-    });
-    messagesArray.push(message);
+//       if ((message+currentMessage).length >= 4096) {
+//         messagesArray.push(message);
+//         message = currentMessage;
+//       } else {
+//         message += currentMessage;
+//       }
+//     });
+//     messagesArray.push(message);
 
-    for (let mess of messagesArray) {
-      await ctx.replyWithHTML(mess);
-    }
-    await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
-      reply_markup: {
-        inline_keyboard: [
-          [{
-            text: "மீண்டும் தொடங்கு",
-            callback_data: 'start'
-          }
-        ]]
-      }
-    });
-  } else {
-    await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
-      reply_markup: {
-        inline_keyboard: [
-          [{
-            text: "மீண்டும் தொடங்கு",
-            callback_data: 'start'
-          }
-        ]]
-      }
-    });
-  }
-}
+//     for (let mess of messagesArray) {
+//       await ctx.replyWithHTML(mess);
+//     }
+//     await ctx.replyWithHTML(`மேலே குறிப்பிட்டுள்ள ${schemes.length} திட்டங்கள் உங்களுக்கு பயனுள்ளவையாக இருக்கலாம். மேலதிக தகவல்களுக்கு அருகிலுள்ள மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும். இந்த சேவையை மீண்டும் தொடங்க கீழுள்ள பொத்தானை தட்டவும்.`, {
+//       reply_markup: {
+//         inline_keyboard: [
+//           [{
+//             text: "மீண்டும் தொடங்கு",
+//             callback_data: 'start'
+//           }
+//         ]]
+//       }
+//     });
+//   } else {
+//     await bot.telegram.sendMessage(ctx.chat.id, 'மன்னிக்கவும். நீங்கள் கொடுத்த தகவலுக்கு ஏற்ற அரசு நலத் திட்டங்கள் பற்றிய விவரங்கள் எங்களிடம் இல்லை. உங்கள் மாவட்ட ஆட்சியர் அலுவலகத்தை அணுகவும்.', {
+//       reply_markup: {
+//         inline_keyboard: [
+//           [{
+//             text: "மீண்டும் தொடங்கு",
+//             callback_data: 'start'
+//           }
+//         ]]
+//       }
+//     });
+//   }
+// }
 // start
 bot.command('start', startFn);
 
